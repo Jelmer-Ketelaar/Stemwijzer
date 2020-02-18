@@ -1,26 +1,26 @@
 body {
     background-image: url(../img/background.jpg);
-    background-size: cover;
+    background-size: cover  ;
     background-repeat: no-repeat;
 }
 
-.logo {
-    width: 10vw;
+body > .w3-container {
+    margin-left: -10.7vw;
+    height: 92.5vh;
+    width: 51.6vw;
 }
 
-.w3-container {
-    margin-left: -10vw;
-    height: 97vh;
-    width: 50vw;
-}
-
-.logo {
+body > .w3-container > .logo {
     margin: 50px 50px 0;
-    width: 331px;
+    width: 331px; 
 }
 
-.logo-stemwijzer {
+body > .logo-stemwijzer {
     width: 10vw;
-    margin-left: 5vw;
-    margin-bottom: -10vh;
+    margin-left: 15vw;
 }
+
+.parties-container {
+    background-color: lightblue;
+}
+
