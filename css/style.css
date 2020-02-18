@@ -1,0 +1,26 @@
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    width: 10vw;
+}
+
+.w3-container {
+    margin-left: -10vw;
+    height: 97vh;
+    width: 50vw;
+}
+
+.logo {
+    margin: 50px 50px 0;
+    width: 331px;
+}
+
+.logo-stemwijzer {
+    width: 10vw;
+    margin-left: 5vw;
+    margin-bottom: -10vh;
+}
