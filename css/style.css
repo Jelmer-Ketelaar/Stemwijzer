@@ -1,60 +1,75 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 body > .w3-container {
-    width: 51.4vw;
-    margin-left: 9.7vw;
-    height: 97vh;
-    background-color: #ffffff;
-    position: absolute;
-    display: block;
-    top: 0;
-    bottom: 0;
-    left: 4vw;
-    right: 0;
+  width: 51.4vw;
+  margin-left: 9.7vw;
+  height: 97vh;
+  background-color: #ffffff;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 4vw;
+  right: 0;
 }
 
 body > .w3-container > .container-inside {
-    padding: 5.8vh 2vw ;
+  padding: 5.8vh 2vw;
 }
 
 .logo_img {
-    width: 19.5vw;
+  width: 19.5vw;
 }
 
 .parties-container {
-    background-color: #01B4DC;
-    width: 69.5vw;
-    height: 98.7vh;
-    float: right;
-    margin-right: 15vw;
-    margin-bottom: 20px;
+  background-color: #01b4dc;
+  width: 69.5vw;
+  height: 98.7vh;
+  float: right;
+  margin-right: 15vw;
+  margin-bottom: 20px;
 }
 
 body > .parties-container > img {
-    padding: 5vh;
-    width: 15.5vw;
-    float: right;
+  padding: 5vh;
+  width: 15.5vw;
+  float: right;
 }
 
-
 body > .w3-container > .container-inside > .intro {
-    font-size: 21px;
-    margin-top: -15px;
+  font-size: 21px;
+  margin-top: -15px;
 }
 
 body > .w3-container > .container-inside > .intro > p {
-    font-weight: 600;
+  font-weight: 550;
 }
 
-body > .w3-container > .container-inside > .intro > .text > h1 {
-    color: #01B4DC;
+body > .w3-container > .container-inside > .intro > .comment > .comment_title {
+  color: #01b4dc;
+  font-weight: 600;
+  font-size: 33px;
 }
+
+body > .w3-container > .container-inside > div > a {
+  text-decoration: none;
+  margin-left: 0.5vw;
+}
+
+.icon-visual {
+  height: 5vh;
+}
+
+.w3-button {
+  margin-top: 5.8vh;
+}
+
