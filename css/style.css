@@ -60,16 +60,23 @@ body > .w3-container > .container-inside > .intro > .comment > .comment_title {
   font-size: 33px;
 }
 
+body > .w3-container > .container-inside > .intro > .comment > button {
+  margin-top: 5.8vh;
+}
+
 body > .w3-container > .container-inside > div > a {
   text-decoration: none;
   margin-left: 0.5vw;
 }
 
-.icon-visual {
+body > .w3-container > .container-inside > .intro-3 > img {
   height: 5vh;
 }
 
-.w3-button {
-  margin-top: 5.8vh;
+body > .w3-container > .container-inside > .intro-3 > a { 
+  width: 10px;
 }
 
+.icon-visual {
+  height: 5vh;
+}
