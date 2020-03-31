@@ -1,195 +1,192 @@
 * {
-  font-family: Arial,Helvetica,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-image: url("../img/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-body > .w3-container {
-  width: 51.4vw;
-  margin-left: 9.7vw;
-  height: 97vh;
-  background-color: #ffffff;
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 4vw;
-  right: 0;
+body>.w3-container {
+    width: 51.4vw;
+    margin-left: 9.7vw;
+    height: 97vh;
+    background-color: #ffffff;
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 4vw;
+    right: 0;
 }
 
-body > .w3-container > .container-inside {
-  padding: 5.8vh 2vw;
+body>.w3-container>.container-inside {
+    padding: 5.8vh 2vw;
 }
 
 .logo_img {
-  width: 19.5vw;
+    width: 19.5vw;
 }
 
 .parties-container {
-  background-color: #01b4dc;
-  width: 69.5vw;
-  height: 98.7vh;
-  float: right;
-  margin-right: 15vw;
-  margin-bottom: 20px;
+    background-color: #01b4dc;
+    width: 69.5vw;
+    height: 98.7vh;
+    float: right;
+    margin-right: 15vw;
+    margin-bottom: 20px;
 }
 
 .parties {
-  width: 20vw;
-  float: right;
-  margin-right: -16vw;
-  margin-top: 20vh;
+    width: 20vw;
+    float: right;
+    margin-right: -16vw;
+    margin-top: 20vh;
 }
 
 .party__logo {
-  position: relative;
-  display: block;
-  float: left;
-  width: 3vw;
-  border-radius: 50%;
-  background-color: white;
-  margin-left: 1.4vw;
-  margin-top: 2vh;
-  transition: 0.2s;
+    position: relative;
+    display: block;
+    float: left;
+    width: 3vw;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 1.4vw;
+    margin-top: 2vh;
+    transition: 0.2s;
 }
 
 .party__logo:hover {
-  transform: scale(2.0);
+    transform: scale(2.0);
 }
 
 .no-parties {
-  width: 20vw;
-  margin-top: 73vh;
-  margin-left: 50vw;
-
+    width: 20vw;
+    margin-top: 73vh;
+    margin-left: 50vw;
 }
 
 .text {
-  margin-bottom: -0.5vh;
-  margin-left: 1vw;
-  color: #ffffff;
-  font-weight: 600;
+    margin-bottom: -0.5vh;
+    margin-left: 1vw;
+    color: #ffffff;
+    font-weight: 600;
 }
 
-body > .parties-container > img {
-  padding: 5vh;
-  width: 15.5vw;
-  float: right;
+body>.parties-container>img {
+    padding: 5vh;
+    width: 15.5vw;
+    float: right;
 }
 
-body > .w3-container > .container-inside > .intro {
-  font-size: 21px;
-  margin-top: -15px;
+body>.w3-container>.container-inside>.intro {
+    font-size: 21px;
+    margin-top: -15px;
 }
 
-body > .w3-container > .container-inside > .intro > p {
-  font-weight: 550;
+body>.w3-container>.container-inside>.intro>p {
+    font-weight: 550;
 }
 
-body > .w3-container > .container-inside > .intro > .comment > .comment_title {
-  color: #01b4dc;
-  font-weight: 600;
-  font-size: 33px;
+body>.w3-container>.container-inside>.intro>.comment>.comment_title {
+    color: #01b4dc;
+    font-weight: 600;
+    font-size: 33px;
 }
 
-body > .w3-container > .container-inside > .intro > .comment > button {
-  margin-top: 6vh;
-  width: 14vw;
-  height: 7.5vh;
-  margin-right: 4.5vw;
-  font-size: 25px;
-  font-weight: bold;
-  transition: 0.2s;
+body>.w3-container>.container-inside>.intro>.comment>button {
+    margin-top: 6vh;
+    width: 14vw;
+    height: 7.5vh;
+    margin-right: 4.5vw;
+    font-size: 25px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
-body > .w3-container > .container-inside > .intro > .comment > button:hover {
+body>.w3-container>.container-inside>.intro>.comment>button:hover {}
 
+body>.w3-container>.container-inside>div>a {
+    text-decoration: none;
+    margin-left: 0.5vw;
 }
 
-body > .w3-container > .container-inside > div > a {
-  text-decoration: none;
-  margin-left: 0.5vw;
+body>.w3-container>.container-inside>.intro-2 {
+    width: 17vw;
+    margin-top: 5vh;
 }
 
-body > .w3-container > .container-inside > .intro-2 {
-  width: 17vw;
-  margin-top: 5vh;
+body>.w3-container>.container-inside>.intro-2>.icon-visual {
+    height: 5vh;
 }
 
-body > .w3-container > .container-inside > .intro-2 > .icon-visual {
-  height: 5vh;
+body>.w3-container>.container-inside>.intro-text {
+    margin-top: -7vh;
+    padding-bottom: 10px;
+    margin-left: 4vw;
+    width: 15vw;
+    font-size: 16px;
 }
 
-body > .w3-container > .container-inside > .intro-text {
-  margin-top: -7vh;
-  padding-bottom: 10px;
-  margin-left: 4vw;
-  width: 15vw;
-  font-size: 16px;
-} 
-
-body > .w3-container > .container-inside > .intro-2nd-text {
-  width: 15vw;
-  margin-top: -8vh;
-  margin-left: 4vw;
-  font-size: 16px;
+body>.w3-container>.container-inside>.intro-2nd-text {
+    width: 15vw;
+    margin-top: -8vh;
+    margin-left: 4vw;
+    font-size: 16px;
 }
 
-body > .w3-container > .container-inside > .intro-4 > img {
-  height: 5vh;
-} 
+body>.w3-container>.container-inside>.intro-4>img {
+    height: 5vh;
+}
 
 .stemwijzer-logo {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: -11vh;
-  padding-bottom: 35px;
-  width: 8vw;  
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -11vh;
+    padding-bottom: 35px;
+    width: 8vw;
 }
 
 .prodemos-logo {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: -16vw;
-  margin-bottom: -11vh;
-  padding-bottom: 35px;
-  width: 6vw;  
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -16vw;
+    margin-bottom: -11vh;
+    padding-bottom: 35px;
+    width: 6vw;
 }
 
 .logo-1v {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: -18.5vw;
-  margin-bottom: -11.4vh;
-  padding-bottom: 35px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -18.5vw;
+    margin-bottom: -11.4vh;
+    padding-bottom: 35px;
 }
 
 .intro__adv {
-  border-top: 2px dotted #979797;
-  background: #f9f9f9;
-  background-size: 100vw;
-  padding: 2em 3.5em 1em;
-  margin: 3em -3.3em 0;
+    border-top: 2px dotted #979797;
+    background: #f9f9f9;
+    background-size: 100vw;
+    padding: 2em 3.5em 1em;
+    margin: 3em -3.3em 0;
 }
 
 .logo-stemmentracker {
-  margin-top: -5vh;
-  width: 23vw;
+    margin-top: -5vh;
+    width: 23vw;
 }
 
-.intro__adv .adv__description { 
-  color: #4F4D4D;
-  line-height: 1.7;
-  font-size: 16px;
-  width: 35vw;
-  padding-bottom: 1.5em;
-  margin-top: -3vh;
-  margin-left: 0.4vw;
+.intro__adv .adv__description {
+    color: #4F4D4D;
+    line-height: 1.7;
+    font-size: 16px;
+    width: 35vw;
+    padding-bottom: 1.5em;
+    margin-top: -3vh;
+    margin-left: 0.4vw;
 }
