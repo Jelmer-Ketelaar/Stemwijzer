@@ -10,13 +10,14 @@ body {
 }
 
 body>.w3-container {
+    margin-top: 10px;
     width: 51.4vw;
     margin-left: 9.7vw;
     height: 97vh;
     background-color: #ffffff;
     position: absolute;
     display: block;
-    top: 0;
+    top: 0.5vh;
     bottom: 0;
     left: 4vw;
     right: 0;
@@ -33,10 +34,10 @@ body>.w3-container>.container-inside {
 .parties-container {
     background-color: #01b4dc;
     width: 69.5vw;
-    height: 98.7vh;
+    height: 98vh;
     float: right;
     margin-right: 15vw;
-    margin-bottom: 20px;
+    margin-top: 25px;
 }
 
 .parties {
@@ -106,7 +107,9 @@ body>.w3-container>.container-inside>.intro>.comment>button {
     transition: 0.2s;
 }
 
-body>.w3-container>.container-inside>.intro>.comment>button:hover {}
+button:hover {
+    background-color: #01b4dc;
+}
 
 body>.w3-container>.container-inside>div>a {
     text-decoration: none;
