@@ -1,3 +1,3 @@
 function startFunction() {
-    document.getElementById("body").style.display = "none";
+    document.getElementById("container-2").style.display = "none";
 }
