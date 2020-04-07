@@ -255,7 +255,7 @@
     <div id="questions" class="questions">
         <div id="progress" class="progressBar">
         </div>
-        <div class="navigationBack w3-padding">
+        <div class="back-button w3-padding">
             <button onclick="previousQuestion()" class="w3-black w3-padding iconBack">
                     <i class="fa fa-arrow-left"></i>
                 </button>
@@ -271,11 +271,27 @@
                 <button class="w3-button w3-black w3-round" onclick="nextStatement('contra')">Oneens</button>
             </div>
 
-            
+            <a id="noOpinion" class="hoverEffect w3-text-grey w3-right">Sla deze vraag over <i class="fa fa-arrow-right"></i></a>
+            <div class="w3-container">
+                <p class="Checkbox">Laat dit onderwerp zwaarder meetellen</p>
+                <input class="checkbox-input" id="important" type="checkbox">
+            </div>
 
-    </div>
-    <script src="js/script.js">
-    </script>
+            <div id="opinionContainer" class="w3-round w3-container">
+                <a id='showOpinion' class="hoverEffect w3-padding">
+                    <img src="" alt="">
+                    <p id='OpinionTitle'>Wat vinden de partijen?</p>
+                </a>
+                <div id='Opinion' class="w3-row w3-center ">
+                    <div class="w3-col s4">
+                        <p class="opinions"><b>Eens</b></p>
+                        <div class="w3-left-align" id='pro'></div>
+                        <div id="eensPartijen"></div>
+                    </div>
+
+                </div>
+                <script src="js/script.js">
+                </script>
 
 </body>
 
