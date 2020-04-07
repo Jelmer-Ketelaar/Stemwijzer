@@ -250,7 +250,30 @@
         </div>
     </div>
 
-    <div class="container"> </div>
+
+
+    <div id="questions" class="questions">
+        <div id="progress" class="progressBar">
+        </div>
+        <div class="navigationBack w3-padding">
+            <button onclick="previousQuestion()" class="w3-black w3-padding iconBack">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+        </div>
+        <section class="stellingSection">
+            <div class="opinionContainer">
+                <h4 id="stellingTitle"></h4>
+                <p id="stellingParagraph"></p>
+            </div>
+            <div class="w3-left">
+                <button class="w3-button w3-black w3-round" onclick="nextStatement('pro')">Eens</button>
+                <button class="w3-button w3-black w3-round" onclick="nextStatement('none')">Geen van beide</button>
+                <button class="w3-button w3-black w3-round" onclick="nextStatement('contra')">Oneens</button>
+            </div>
+
+            
+
+    </div>
     <script src="js/script.js">
     </script>
 
