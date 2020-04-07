@@ -184,12 +184,28 @@ body>.w3-container>.container-inside>.intro-4>img {
     width: 23vw;
 }
 
-.intro__adv .adv__description {
-    color: #4F4D4D;
-    line-height: 1.7;
-    font-size: 16px;
-    width: 35vw;
-    padding-bottom: 1.5em;
-    margin-top: -3vh;
-    margin-left: 0.4vw;
+/* Style for the questions */
+
+.questions {
+    display: none;
+}
+
+.back-button {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.progressBar {
+  overflow: none;
+  border-top: 8px #01B4DC;
+}
+
+.iconBack {
+  border-radius: 50%;
+}
+
+.stellingSection {
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 20px;
 }
