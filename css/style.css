@@ -9,7 +9,7 @@ body {
     position: relative;
 }
 
-body>.w3-container {
+body > .w3-container {
     margin-top: 10px;
     width: 51.4vw;
     margin-left: 9.7vw;
@@ -23,7 +23,7 @@ body>.w3-container {
     right: 0;
 }
 
-body>.w3-container>.container-inside {
+body > .w3-container > .container-inside {
     padding: 5.8vh 2vw;
 }
 
@@ -76,28 +76,28 @@ body>.w3-container>.container-inside {
     font-weight: 600;
 }
 
-body>.parties-container>img {
+body > .parties-container > img {
     padding: 5vh;
     width: 15.5vw;
     float: right;
 }
 
-body>.w3-container>.container-inside>.intro {
+body > .w3-container > .container-inside > .intro {
     font-size: 21px;
     margin-top: -15px;
 }
 
-body>.w3-container>.container-inside>.intro>p {
+body > .w3-container > .container-inside > .intro > p {
     font-weight: 550;
 }
 
-body>.w3-container>.container-inside>.intro>.comment>.comment_title {
+body > .w3-container > .container-inside > .intro > .comment > .comment_title {
     color: #01b4dc;
     font-weight: 600;
     font-size: 33px;
 }
 
-body>.w3-container>.container-inside>.intro>.comment>button {
+body > .w3-container > .container-inside > .intro > .comment > button {
     margin-top: 6vh;
     width: 14vw;
     height: 7.5vh;
@@ -111,21 +111,21 @@ button:hover {
     background-color: #01b4dc;
 }
 
-body>.w3-container>.container-inside>div>a {
+body > .w3-container > .container-inside > div > a {
     text-decoration: none;
     margin-left: 0.5vw;
 }
 
-body>.w3-container>.container-inside>.intro-2 {
+body > .w3-container > .container-inside > .intro-2 {
     width: 17vw;
     margin-top: 5vh;
 }
 
-body>.w3-container>.container-inside>.intro-2>.icon-visual {
+body > .w3-container > .container-inside > .intro-2 > .icon-visual {
     height: 5vh;
 }
 
-body>.w3-container>.container-inside>.intro-text {
+body > .w3-container > .container-inside > .intro-text {
     margin-top: -7vh;
     padding-bottom: 10px;
     margin-left: 4vw;
@@ -133,14 +133,14 @@ body>.w3-container>.container-inside>.intro-text {
     font-size: 16px;
 }
 
-body>.w3-container>.container-inside>.intro-2nd-text {
+body > .w3-container > .container-inside > .intro-2nd-text {
     width: 15vw;
     margin-top: -8vh;
     margin-left: 4vw;
     font-size: 16px;
 }
 
-body>.w3-container>.container-inside>.intro-4>img {
+body > .w3-container > .container-inside > .intro-4 > img {
     height: 5vh;
 }
 
@@ -166,8 +166,8 @@ body>.w3-container>.container-inside>.intro-4>img {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-right: -18.5vw;
-    margin-bottom: -11.4vh;
+    margin-right: -18vw;
+    margin-bottom: -11.28vh;
     padding-bottom: 35px;
 }
 
@@ -203,17 +203,45 @@ body>.w3-container>.container-inside>.intro-4>img {
     background-color: #01b4dc;
 }
 
-.btn_back {
-    background-position: 50%;
-    background-color: #E7EAEB;
-    border-radius: 50px;
-    height: 50px;
-    width: 50px;
-
-}
+/*.btn_back {*/
+/*    background-position: 50%;*/
+/*    background-color: #E7EAEB;*/
+/*    border-radius: 50px;*/
+/*    height: 50px;*/
+/*    width: 50px;*/
+/*}*/
 
 .stellingSection {
-  padding-left: 110px;
-  padding-right: 110px;
-  padding-top: 20px;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-top: 20px;
 }
+
+.statements {
+    background-color: white;
+    position: relative;
+    width: 100%;
+}
+
+.footer__navigation {
+    color: black;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 40px;
+}
+
+
+
+/*.skip_btn {*/
+/*    background-color: transparent;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*}*/
+
+/*.skip_btn:hover {*/
+/*    background-color: white;*/
+/*    cursor: pointer;*/
+/*}*/
+
