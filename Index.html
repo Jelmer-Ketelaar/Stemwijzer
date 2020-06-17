@@ -263,7 +263,7 @@
 
         <div class="party">
             <a href="http://lokaalindekamer.nl" target="_blank">
-                ; <img alt="Lokaal in de Kamer" class="party__logo" src="img/parties/vdp.png"
+                 <img alt="Lokaal in de Kamer" class="party__logo" src="img/parties/vdp.png"
                        title="Lokaal in de Kamer">
             </a>
         </div>
@@ -271,6 +271,7 @@
 </div>
 
 <div id="statements" class="statements">
+    <div id="statement-cont">
     <div id="application_progress">
     </div>
     <div class="application_navigation">
@@ -285,20 +286,21 @@
         </div>
 
         <div class="w3-left">
-            <button class="w3-button w3-round answerSection" onclick="NextQuestion('pro')">Eens</button>
-            <button class="w3-button w3-round answerSection" onclick="NextQuestion('none')">Geen van beide
+            <button class="w3-button w3-round answerSection" id="pro" onclick="NextQuestion('pro')">Eens</button>
+            <button class="w3-button w3-round answerSection" id="none" onclick="NextQuestion('none')">Geen van beide
             </button>
-            <button class="w3-button w3-round answerSection" onclick="NextQuestion('contra')">Oneens</button>
+            <button class="w3-button w3-round answerSection" id="contra" onclick="NextQuestion('contra')">Oneens
+            </button>
         </div>
 
         <button id="btn_skip" onclick="nextStatement()" class="skip_btn hover w3-text-grey w3-right">Sla deze vraag over
             <i class="fa fa-arrow-right"></i></button>
         <div class="w3-container">
             <p class="partyCheckbox">Laat dit onderwerp zwaarder meetellen</p>
-            <input class="checkboxInput" id="important" type="checkbox">
+            <label for="important"></label><input class="checkboxInput" id="important" type="checkbox">
         </div>
     </section>
-
+    </div>
     <section id="partyPage" class="partyPage">
         <br><br>
         <h3>Welke partijen wilt u meenemen in het resultaat?</h3>
@@ -308,13 +310,13 @@
         <button onclick="showResultPage()">Naar resultaat gaan</button>
         <div id="importantSubjects">
             <h4>Kies de partijen die u mee wilt nemen in het resultaat</h4>
-            <button id="secular" class="w3-button w3-round w3-border filterParty" onclick="getSeatedParties()">
+            <button id="seated" class="w3-button w3-round w3-border filterParty" onclick="getSeatedParties()">
                 Selecteer zittende partijen
             </button>
             <button id="all" class="w3-button w3-round w3-border filterParty" onclick="getAllParties()">
                 Selecteer alle partijen
             </button>
-            <button id="grote" class="w3-button w3-round w3-border filterParty" onclick="getBiggerParties()">
+            <button id="bigger" class="w3-button w3-round w3-border filterParty" onclick="getBiggerParties()">
                 Selecteer de grote partijen
             </button>
             <div class="w3-row w3-center ">
@@ -328,22 +330,22 @@
     <section id="resultSection">
         <h3 class="resultTitle">Resultaat</h3>
         <div class="placeContainer">
-            <div class="place">
-                <p id="1st">1</p>
+            <div class="firstPlace">
+                <p id="1st">1: </p>
             </div>
-            <div class="place">
-                <p id="2nd">2</p>
+            <div class="secondPlace">
+                <p id="2nd">2: </p>
             </div>
-            <div class="place">
-                <p id="3rd">3</p>
+            <div class="thirdPlace">
+                <p id="3rd">3: </p>
             </div>
         </div>
     </section>
 </div>
-<script src="js/script.js">
-</script>
 <script type="text/javascript" src="http://stemwijzer.dvc-icta.nl/testdata.js"></script>
-<!-- <script type="text/javascript" src="javascript/data.js"></script> -->
+<!--<script type="text/javascript" src="js/data.js"></script>-->
+<script src="js/script.js"></script>
+
 
 </body>
 
