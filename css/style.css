@@ -203,13 +203,13 @@ body > .w3-container > .container-inside > .intro-4 > img {
     background-color: #01b4dc;
 }
 
-/*.btn_back {*/
-/*    background-position: 50%;*/
-/*    background-color: #E7EAEB;*/
-/*    border-radius: 50px;*/
-/*    height: 50px;*/
-/*    width: 50px;*/
-/*}*/
+.btn_back {
+    background-position: 50%;
+    background-color: #E7EAEB;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
 
 .stellingSection {
     padding-left: 110px;
@@ -232,16 +232,14 @@ body > .w3-container > .container-inside > .intro-4 > img {
     padding-inline-start: 40px;
 }
 
+.skip_btn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
 
-
-/*.skip_btn {*/
-/*    background-color: transparent;*/
-/*    border: none;*/
-/*    outline: none;*/
-/*}*/
-
-/*.skip_btn:hover {*/
-/*    background-color: white;*/
-/*    cursor: pointer;*/
-/*}*/
+.skip_btn:hover {
+    background-color: white;
+    cursor: pointer;
+}
 
