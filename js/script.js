@@ -1,3 +1,6 @@
+document.getElementById("partyPage").style.display = "none";
+document.getElementById("resultSection").style.display = "none";
+
 //Hier maak ik 3 variabelen aan. De eerste is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 var statementOrder = 0;
 
@@ -14,6 +17,9 @@ parties.forEach(oneParty => {
     oneParty.points = 0;
 })
 
+var topParties = [];
+var bigParty = 10;
+
 /**
  * De Pagina met vragen word geladen
  */
@@ -21,6 +27,8 @@ function startFunction() {
     document.getElementById("container").style.display = "none";
     document.getElementById("container-2").style.display = "none";
     document.getElementById("statements").style.display = "block";
+    document.getElementById("partyPage").style.display = "none";
+    document.getElementById("resultSection").style.display = "none";
 
     //Zet de eerste vraag klaar
     title.innerHTML = subjects[0].title;
@@ -80,7 +88,8 @@ function previousQuestion() {
 function showAnswer(answer) {
     document.getElementById('important').checked = false;
     for (var f = 0; f < document.getElementsByClassName('answerSection').length; f++) {
-        document.getElementsByClassName("answerSection")[f].style.background = 'white';
+        document.getElementsByClassName("answerSection")[f].style.background = 'black';
+        document.getElementsByClassName("answerSection")[f].style.font = 'white';
     }
     if (subjects[statementOrder].important === true) {
         document.getElementById('important').checked = true;
@@ -92,6 +101,9 @@ function showAnswer(answer) {
     }
 }
 
+/**
+ * Deze functie zorgt er voor dat alle punten bij elkaar worden opgeteld. En dat de partijen die het beste bij jou passen worden uitgerekend
+ */
 function calculatePoints() {
     //Hier loop je door alle subjects heen
     for (var i = 0; i < subjects.length; i++) {
@@ -111,4 +123,80 @@ function calculatePoints() {
             }
         }
     }
+    displayPartyPage()
+}
+
+function displayPartyPage() {
+    //Nieuwe pagina word geladen
+    document.getElementById("statement-cont").style.display = "none";
+    document.getElementById("partyPage").style.display = "block";
+
+    //De partijen worden op volgorde gezet met de meeste punten
+    parties.sort((a, b) => b.points - a.points);
+    console.log(parties);
+
+    //Hier worden de partijen getoond
+    for (var c = 0; c < parties.length; c++) {
+        var d = document.createElement("d");
+        d.innerHTML = parties[d].name;
+        document.getElementById('partyOrder').appendChild(d);
+    }
+}
+
+/**
+ * Deze functie word aangeroepen als de gebruiken de zittende partijen selecteerd
+ */
+function getSeatedParties() {
+    checkSelectParty('seated')
+    topParties = [];
+    topParties = parties.filter(party => {
+        return party.secular == true;
+    })
+}
+
+/**
+ * Deze functie word aangeroepen als de persoon alle partijen selecteerd
+ */
+function getAllParties() {
+    checkSelectParty('all')
+    topParties = [];
+    topParties = parties;
+}
+
+/**
+ * Alleen de grote partijen worden getoond
+ */
+function getBiggerParties() {
+    checkSelectParty('bigger')
+    topParties = [];
+    topParties = parties.filter(party => {
+        return party.size >= bigParty;
+    })
+}
+
+/**
+ * De kleur van de knop word veranderd al klik je op een van de knoppen
+ * @param partyID de value van de knop
+ */
+function checkSelectParty(partyID) {
+    for (var f = 0; f < document.getElementsByClassName('filterParty').length; f++) {
+        document.getElementsByClassName('filterParty')[f].style.background = 'white';
+    }
+    document.getElementById(partyID).style.background = '#01B4DC';
+}
+
+/**
+ * De Resultaat pagina word geladen
+ */
+function showResultPage() {
+    if (topParties.length == 0) {
+        return alert("Klik op een van de onderstaande knoppen s.v.p.");
+    }
+    document.getElementById("partyPage").style.display = "none";
+    document.getElementById("resultSection").style.display = "block";
+
+    //De top 3 partijen worden laten zien
+    document.getElementById('1st').innerHTML += topParties[0].name;
+    document.getElementById('2nd').innerHTML += topParties[1].name;
+    document.getElementById('3rd').innerHTML += topParties[2].name;
 }
