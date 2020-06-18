@@ -128,6 +128,7 @@ function calculatePoints() {
 
 function displayPartyPage() {
     //Nieuwe pagina word geladen
+    document.getElementById("statements").style.display = "none";
     document.getElementById("statement-cont").style.display = "none";
     document.getElementById("partyPage").style.display = "block";
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl">
+<html lang="nl" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -272,64 +272,73 @@
 </div>
 
 <div id="statements" class="statements">
-    <div id="statement-cont">
-        <div id="application_progress">
-        </div>
-        <div class="application_navigation">
-            <button onclick="previousQuestion()" value="Go back to previous question" class="btn_back">
-                <i class="fas fa-arrow-left"></i>
-            </button>
-        </div>
-        <section class="section" id="section">
-            <div class="statement_wrapper">
-                <h3 id="opinions_title"></h3>
-                <p id="statement_description"></p>
+        <div id="statement-cont">
+            <div id="application_progress">
             </div>
-
-            <div class="w3-left">
-                <button class="w3-button w3-round answerSection" id="pro" onclick="NextQuestion('pro')">Eens</button>
-                <button class="w3-button w3-round answerSection" id="none" onclick="NextQuestion('none')">Geen van beide
-                </button>
-                <button class="w3-button w3-round answerSection" id="contra" onclick="NextQuestion('contra')">Oneens
+            <div class="application_navigation">
+                <button onclick="previousQuestion()" value="Go back to previous question" class="btn_back">
+                    <i class="fas fa-arrow-left"></i>
                 </button>
             </div>
+            <center>
+            <section class="section" id="section">
+                <div class="statement_wrapper">
+                    <h3 id="opinions_title"></h3>
+                    <p id="statement_description"></p>
+                </div>
 
-            <button id="btn_skip" onclick="nextStatement()" class="skip_btn hover w3-text-grey w3-right">Sla deze vraag
-                over
-                <i class="fa fa-arrow-right"></i></button>
-            <div class="w3-container">
-                <p class="partyCheckbox">Laat dit onderwerp zwaarder meetellen</p>
-                <label for="important"></label><input class="checkboxInput" id="important" type="checkbox">
-            </div>
-        </section>
-    </div>
+                <div class="w3-centered">
+                    <button class="w3-button w3-round answerSection" id="pro" onclick="NextQuestion('pro')">Eens
+                    </button>
+                    <button class="w3-button w3-round answerSection" id="none" onclick="NextQuestion('none')">Geen van
+                        beide
+                    </button>
+                    <button class="w3-button w3-round answerSection" id="contra" onclick="NextQuestion('contra')">Oneens
+                    </button>
+                </div>
+
+                <button id="btn_skip" onclick="nextStatement()" class="skip_btn hover w3-text-grey w3-right">Sla deze
+                    vraag
+                    over
+                    <i class="fa fa-arrow-right"></i></button>
+                <div class="w3-container">
+                    <p class="partyCheckbox">Laat dit onderwerp zwaarder meetellen</p>
+                    <label for="important"></label><input class="checkboxInput" id="important" type="checkbox">
+                </div>
+            </section>
+            </center>
+        </div>
+
 </div>
+
 <section id="partyPage" class="partyPage">
-    <br><br>
-    <h3>Welke partijen wilt u meenemen in het resultaat?</h3>
-    <p>U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn. Daarbij nemen we ook
-        de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen meenemen en u kunt een
-        eigen selectie maken van tenminste drie partijen.</p>
+    <center>
+        <h3 class="title">Welke partijen wilt u meenemen in het resultaat?</h3>
+        <p class="tekst">U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn. Daarbij
+            nemen we ook
+            de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen meenemen en u kunt een
+            eigen selectie maken van tenminste drie partijen.</p>
 
-    <button onclick="showResultPage()">Naar resultaat gaan</button>
-
-    <div id="importantSubjects">
-        <h4>Kies de partijen die u mee wilt nemen in het resultaat</h4>
-        <button id="seated" class="w3-button w3-round w3-border filterParty" onclick="getSeatedParties()">
-            Selecteer zittende partijen
-        </button>
-        <button id="all" class="w3-button w3-round w3-border filterParty" onclick="getAllParties()">
-            Selecteer alle partijen
-        </button>
-        <button id="bigger" class="w3-button w3-round w3-border filterParty" onclick="getBiggerParties()">
-            Selecteer de grote partijen
-        </button>
-        <div class="w3-row w3-center ">
-            <div class="w3-col s4">
-                <div class="w3-left-align" id='partyOrder'></div>
+        <div id="importantSubjects">
+            <h4>Kies de partijen die u mee wilt nemen in het resultaat</h4>
+            <button id="seated" class="w3-button w3-round w3-border filterParty" onclick="getSeatedParties()">
+                Selecteer zittende partijen
+            </button>
+            <button id="all" class="w3-button w3-round w3-border filterParty" onclick="getAllParties()">
+                Selecteer alle partijen
+            </button>
+            <button id="bigger" class="w3-button w3-round w3-border filterParty" onclick="getBiggerParties()">
+                Selecteer de grote partijen
+            </button>
+            <div class="w3-row w3-center ">
+                <div class="w3-col s4">
+                    <div class="w3-left-align" id='partyOrder'></div>
+                </div>
             </div>
         </div>
-    </div>
+        <br><br>
+        <button onclick="showResultPage()">Naar resultaat gaan</button>
+    </center>
 </section>
 
 <section id="resultSection">

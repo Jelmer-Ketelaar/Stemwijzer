@@ -198,7 +198,7 @@ body > .w3-container > .container-inside > .intro-4 > img {
 .application_progress {
     position: absolute;
     display: flex;
-    height: .5em;
+    height: 5;
     width: 100%;
     background-color: #01b4dc;
 }
@@ -209,6 +209,10 @@ body > .w3-container > .container-inside > .intro-4 > img {
     border-radius: 50px;
     height: 50px;
     width: 50px;
+    outline: none;
+    margin-left: 1vw;
+    margin-top: 2vh;
+    border: none;
 }
 
 .stellingSection {
@@ -219,8 +223,10 @@ body > .w3-container > .container-inside > .intro-4 > img {
 
 .statements {
     background-color: white;
-    position: relative;
-    width: 100%;
+    height: 80vh;
+    width: 60%;
+    margin-left: 23vw;
+    margin-top: 5vw;
 }
 
 .footer__navigation {
@@ -242,6 +248,7 @@ body > .w3-container > .container-inside > .intro-4 > img {
     background-color: white;
     cursor: pointer;
 }
+
 /* mening buttons */
 #pro {
     background-color: black;
@@ -272,9 +279,20 @@ body > .w3-container > .container-inside > .intro-4 > img {
 
 #partyPage {
     background-color: white;
+    height: 80vh;
+    width: 60%;
+    margin-left: 23vw;
+    margin-top: 5vw;
 }
 
 #resultSection {
     background-color: white;
-    margin: 0;
+    text-align: center;
 }
+
+.tekst {
+    display: block;
+    width: 500px;
+    text-align: center;
+}
+
