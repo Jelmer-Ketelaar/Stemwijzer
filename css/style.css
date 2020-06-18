@@ -242,4 +242,39 @@ body > .w3-container > .container-inside > .intro-4 > img {
     background-color: white;
     cursor: pointer;
 }
+/* mening buttons */
+#pro {
+    background-color: black;
+    color: white;
+}
 
+#none {
+    background-color: black;
+    color: white;
+}
+
+#contra {
+    background-color: black;
+    color: white;
+}
+
+#pro:hover {
+    background-color: #01B4DC !important;
+}
+
+#none:hover {
+    background-color: #01B4DC !important;
+}
+
+#contra:hover {
+    background-color: #01B4DC !important;
+}
+
+#partyPage {
+    background-color: white;
+}
+
+#resultSection {
+    background-color: white;
+    margin: 0;
+}
