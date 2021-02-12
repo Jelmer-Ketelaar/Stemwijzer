@@ -140,7 +140,7 @@ body > .w3-container > .container-inside > .intro-2nd-text {
   font-size: 16px;
 }
 
-body > .w3-container > .container-inside > .intro-4 > img {
+body > .w3-container > .container-inside > .intro-3 > img {
   height: 5vh;
 }
 
@@ -171,7 +171,7 @@ body > .w3-container > .container-inside > .intro-4 > img {
   padding-bottom: 35px;
 }
 
-.intro__adv {
+.intro-4 {
   border-top: 2px dotted #979797;
   background: #f9f9f9;
   background-size: 100vw;
@@ -185,10 +185,6 @@ body > .w3-container > .container-inside > .intro-4 > img {
 }
 
 /* Style for the questions */
-
-.statements {
-  display: none;
-}
 
 .back-button {
   margin-top: 15px;
@@ -227,6 +223,7 @@ body > .w3-container > .container-inside > .intro-4 > img {
   width: 60%;
   margin-left: 23vw;
   margin-top: 5vw;
+  display: none;
 }
 
 .footer__navigation {
