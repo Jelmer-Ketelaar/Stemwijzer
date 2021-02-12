@@ -1,302 +1,315 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 body > .w3-container {
-    margin-top: 10px;
-    width: 51.4vw;
-    margin-left: 9.7vw;
-    height: 97vh;
-    background-color: #ffffff;
-    position: absolute;
-    display: block;
-    top: 0.5vh;
-    bottom: 0;
-    left: 4vw;
-    right: 0;
+  margin-top: 10px;
+  width: 51.4vw;
+  margin-left: 9.7vw;
+  height: 97vh;
+  background-color: #ffffff;
+  position: absolute;
+  display: block;
+  top: 0.5vh;
+  bottom: 0;
+  left: 4vw;
+  right: 0;
 }
 
 body > .w3-container > .container-inside {
-    padding: 5.8vh 2vw;
+  padding: 5.8vh 2vw;
 }
 
 .logo_img {
-    width: 19.5vw;
+  width: 19.5vw;
 }
 
 .parties-container {
-    background-color: #01b4dc;
-    width: 69.5vw;
-    height: 98vh;
-    float: right;
-    margin-right: 15vw;
-    margin-top: 25px;
+  background-color: #01b4dc;
+  width: 69.5vw;
+  height: 98vh;
+  float: right;
+  margin-right: 15vw;
+  margin-top: 25px;
 }
 
 .parties {
-    width: 20vw;
-    float: right;
-    margin-right: -16vw;
-    margin-top: 20vh;
+  width: 20vw;
+  float: right;
+  margin-right: -16vw;
+  margin-top: 20vh;
 }
 
 .party__logo {
-    position: relative;
-    display: block;
-    float: left;
-    width: 3vw;
-    border-radius: 50%;
-    background-color: white;
-    margin-left: 1.4vw;
-    margin-top: 2vh;
-    transition: 0.2s;
+  position: relative;
+  display: block;
+  float: left;
+  width: 3vw;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: 1.4vw;
+  margin-top: 2vh;
+  transition: 0.2s;
 }
 
 .party__logo:hover {
-    transform: scale(2.0);
+  transform: scale(2);
 }
 
 .no-parties {
-    width: 20vw;
-    margin-top: 73vh;
-    margin-left: 50vw;
+  width: 20vw;
+  margin-top: 73vh;
+  margin-left: 50vw;
 }
 
 .text {
-    margin-bottom: -0.5vh;
-    margin-left: 1vw;
-    color: #ffffff;
-    font-weight: 600;
+  margin-bottom: -0.5vh;
+  margin-left: 1vw;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 body > .parties-container > img {
-    padding: 5vh;
-    width: 15.5vw;
-    float: right;
+  padding: 5vh;
+  width: 15.5vw;
+  float: right;
 }
 
 body > .w3-container > .container-inside > .intro {
-    font-size: 21px;
-    margin-top: -15px;
+  font-size: 21px;
+  margin-top: -15px;
 }
 
 body > .w3-container > .container-inside > .intro > p {
-    font-weight: 550;
+  font-weight: 550;
 }
 
 body > .w3-container > .container-inside > .intro > .comment > .comment_title {
-    color: #01b4dc;
-    font-weight: 600;
-    font-size: 33px;
+  color: #01b4dc;
+  font-weight: 600;
+  font-size: 33px;
 }
 
 body > .w3-container > .container-inside > .intro > .comment > button {
-    margin-top: 6vh;
-    width: 14vw;
-    height: 7.5vh;
-    margin-right: 4.5vw;
-    font-size: 25px;
-    font-weight: bold;
-    transition: 0.2s;
+  margin-top: 6vh;
+  width: 14vw;
+  height: 7.5vh;
+  margin-right: 4.5vw;
+  font-size: 25px;
+  font-weight: bold;
+  transition: 0.2s;
 }
 
 button:hover {
-    background-color: #01b4dc;
+  background-color: #01b4dc;
 }
 
 body > .w3-container > .container-inside > div > a {
-    text-decoration: none;
-    margin-left: 0.5vw;
+  text-decoration: none;
+  margin-left: 0.5vw;
 }
 
 body > .w3-container > .container-inside > .intro-2 {
-    width: 17vw;
-    margin-top: 5vh;
+  width: 17vw;
+  margin-top: 5vh;
 }
 
 body > .w3-container > .container-inside > .intro-2 > .icon-visual {
-    height: 5vh;
+  height: 5vh;
 }
 
 body > .w3-container > .container-inside > .intro-text {
-    margin-top: -7vh;
-    padding-bottom: 10px;
-    margin-left: 4vw;
-    width: 15vw;
-    font-size: 16px;
+  margin-top: -7vh;
+  padding-bottom: 10px;
+  margin-left: 4vw;
+  width: 15vw;
+  font-size: 16px;
 }
 
 body > .w3-container > .container-inside > .intro-2nd-text {
-    width: 15vw;
-    margin-top: -8vh;
-    margin-left: 4vw;
-    font-size: 16px;
+  width: 15vw;
+  margin-top: -8vh;
+  margin-left: 4vw;
+  font-size: 16px;
 }
 
 body > .w3-container > .container-inside > .intro-4 > img {
-    height: 5vh;
+  height: 5vh;
 }
 
 .stemwijzer-logo {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: -11vh;
-    padding-bottom: 35px;
-    width: 8vw;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: -11vh;
+  padding-bottom: 35px;
+  width: 8vw;
 }
 
 .prodemos-logo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: -16vw;
-    margin-bottom: -11vh;
-    padding-bottom: 35px;
-    width: 6vw;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: -16vw;
+  margin-bottom: -11vh;
+  padding-bottom: 35px;
+  width: 6vw;
 }
 
 .logo-1v {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: -18vw;
-    margin-bottom: -11.28vh;
-    padding-bottom: 35px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: -18vw;
+  margin-bottom: -11.28vh;
+  padding-bottom: 35px;
 }
 
 .intro__adv {
-    border-top: 2px dotted #979797;
-    background: #f9f9f9;
-    background-size: 100vw;
-    padding: 2em 3.5em 1em;
-    margin: 3em -3.3em 0;
+  border-top: 2px dotted #979797;
+  background: #f9f9f9;
+  background-size: 100vw;
+  padding: 2em 3.5em 1em;
+  margin: 3em -3.3em 0;
 }
 
 .logo-stemmentracker {
-    margin-top: -5vh;
-    width: 23vw;
+  margin-top: -5vh;
+  width: 23vw;
 }
 
 /* Style for the questions */
 
 .statements {
-    display: none;
+  display: none;
 }
 
 .back-button {
-    margin-top: 15px;
-    cursor: pointer;
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .application_progress {
-    position: absolute;
-    display: flex;
-    height: 5;
-    width: 100%;
-    background-color: #01b4dc;
+  position: absolute;
+  display: flex;
+  height: 5;
+  width: 100%;
+  background-color: #01b4dc;
 }
 
 .btn_back {
-    background-position: 50%;
-    background-color: #E7EAEB;
-    border-radius: 50px;
-    height: 50px;
-    width: 50px;
-    outline: none;
-    margin-left: 1vw;
-    margin-top: 2vh;
-    border: none;
+  background-position: 50%;
+  background-color: #e7eaeb;
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+  outline: none;
+  margin-left: 1vw;
+  margin-top: 2vh;
+  border: none;
 }
 
 .stellingSection {
-    padding-left: 110px;
-    padding-right: 110px;
-    padding-top: 20px;
+  padding-left: 110px;
+  padding-right: 110px;
+  padding-top: 20px;
 }
 
 .statements {
-    background-color: white;
-    height: 80vh;
-    width: 60%;
-    margin-left: 23vw;
-    margin-top: 5vw;
+  background-color: white;
+  height: 80vh;
+  width: 60%;
+  margin-left: 23vw;
+  margin-top: 5vw;
 }
 
 .footer__navigation {
-    color: black;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 40px;
+  color: black;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 40px;
 }
 
 .skip_btn {
-    background-color: transparent;
-    border: none;
-    outline: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 .skip_btn:hover {
-    background-color: white;
-    cursor: pointer;
+  background-color: white;
+  cursor: pointer;
 }
 
 /* mening buttons */
 #pro {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 #none {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 #contra {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 #pro:hover {
-    background-color: #01B4DC !important;
+  background-color: #01b4dc !important;
 }
 
 #none:hover {
-    background-color: #01B4DC !important;
+  background-color: #01b4dc !important;
 }
 
 #contra:hover {
-    background-color: #01B4DC !important;
+  background-color: #01b4dc !important;
 }
 
 #partyPage {
-    background-color: white;
-    height: 80vh;
-    width: 60%;
-    margin-left: 23vw;
-    margin-top: 5vw;
+  background-color: white;
+  height: 80vh;
+  width: 60%;
+  margin-left: 23vw;
+  margin-top: 5vw;
 }
 
 #resultSection {
-    background-color: white;
-    height: 80vh;
-    width: 60%;
-    margin-left: 23vw;
-    margin-top: 5vw;
-    text-align: center;
+  background-color: white;
+  height: 80vh;
+  width: 60%;
+  margin-left: 23vw;
+  margin-top: 5vw;
+  text-align: center;
 }
 
 .tekst {
-    display: block;
-    width: 500px;
-    text-align: center;
+  display: block;
+  width: 500px;
+  text-align: center;
 }
 
+#answer-buttons {
+  margin-left: 6vw;
+  margin-top: 10px;
+}
+
+#statement_description {
+  width: 30vw;
+  margin-left: 6vw;
+}
+
+#opinions_title {
+  margin-left: 6vw;
+}
