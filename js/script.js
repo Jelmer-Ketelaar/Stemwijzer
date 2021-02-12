@@ -4,8 +4,8 @@ document.getElementById("resultSection").style.display = "none";
 //Hier maak ik 3 variabelen aan. De eerste is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 var statementOrder = 0;
 
-var title = document.getElementById("opinions_title");
-var description = document.getElementById("statement_description");
+const title = document.getElementById("opinions_title");
+const description = document.getElementById("statement_description");
 
 //Loopt door de subject heen
 subjects.forEach(subject => {
@@ -17,8 +17,8 @@ parties.forEach(oneParty => {
     oneParty.points = 0;
 })
 
-var topParties = [];
-var bigParty = 10;
+let topParties = [];
+const bigParty = 10;
 
 /**
  * De Pagina met vragen word geladen
@@ -94,8 +94,8 @@ function showAnswer(answer) {
     if (subjects[statementOrder].important === true) {
         document.getElementById('important').checked = true;
     }
-    if (answer == '') {
-        return
+    if (answer === '') {
+
     } else {
         document.getElementById(answer).style.background = '#01B4DC';
     }
@@ -110,11 +110,11 @@ function calculatePoints() {
         //Hier loop je door alle subject partijen heen
         for (var b = 0; b < subjects[i].parties.length; b++) {
             //Je vergelijkt je antwoord met de standpunten van de partijen
-            if (subjects[i].myAnswer == subjects[i].parties[b].position) {
-                var findParty = parties.find(oneParty => oneParty.name == subjects[i].parties[b].name);
+            if (subjects[i].myAnswer === subjects[i].parties[b].position) {
+                var findParty = parties.find(oneParty => oneParty.name === subjects[i].parties[b].name);
 
                 //Hier zeg je dat als important wordt aangeklikt hij 2 punten moet geven en als dat niet gebeurd dan is het maar 1 punt
-                if (subjects[i].important == true) {
+                if (subjects[i].important === true) {
                     findParty.points += 2;
                 } else {
                     findParty.points += 1;
@@ -138,9 +138,9 @@ function displayPartyPage() {
 
     //Hier worden de partijen getoond
     for (var c = 0; c < parties.length; c++) {
-        var d = document.createElement("d");
-        d.innerHTML = parties[d].name;
-        document.getElementById('partyOrder').appendChild(d);
+        var c = document.createElement("c");
+
+        document.getElementById('partyOrder').appendChild(c);
     }
 }
 
@@ -151,7 +151,7 @@ function getSeatedParties() {
     checkSelectParty('seated')
     topParties = [];
     topParties = parties.filter(party => {
-        return party.secular == true;
+        return party.secular === true;
     })
 }
 
@@ -190,7 +190,7 @@ function checkSelectParty(partyID) {
  * De Resultaat pagina word geladen
  */
 function showResultPage() {
-    if (topParties.length == 0) {
+    if (topParties.length === 0) {
         return alert("Klik op een van de onderstaande knoppen s.v.p.");
     }
     document.getElementById("partyPage").style.display = "none";
