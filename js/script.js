@@ -1,21 +1,24 @@
 document.getElementById("partyPage").style.display = "none";
 document.getElementById("resultSection").style.display = "none";
 
-//Hier maak ik 3 variabelen aan. De eerste is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
-var statementOrder = 0;
 
+//Hier maak ik 3 variabelen aan. De eerste is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
+let statementOrder = 0;
 const title = document.getElementById("opinions_title");
 const description = document.getElementById("statement_description");
 
-//Loopt door de subject heen
-subjects.forEach(subject => {
+
+const subjectInit = function (subject) {
     subject.myAnswer = '';
     subject.important = false;
-})
+};
+subjects.forEach(subjectInit);
 
-parties.forEach(oneParty => {
+const partiesInit = function (oneParty) {
     oneParty.points = 0;
-})
+};
+parties.forEach(partiesInit);
+
 
 let topParties = [];
 const bigParty = 10;
@@ -31,9 +34,14 @@ function startFunction() {
     document.getElementById("resultSection").style.display = "none";
 
     //Zet de eerste vraag klaar
+
     title.innerHTML = subjects[0].title;
     description.innerHTML = subjects[0].statement;
 }
+
+const startButton = document.getElementById('button');
+startButton.onclick = startFunction;
+
 
 /**
  * @param answer De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
