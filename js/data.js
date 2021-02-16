@@ -3602,7 +3602,7 @@ const subjects = [{
 }
 ];
 
-var parties = [{
+const parties = [{
     name: "VVD",
     secular: true,
     size: 33,
