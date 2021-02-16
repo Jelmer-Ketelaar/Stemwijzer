@@ -7,7 +7,6 @@ let statementOrder = 0;
 const title = document.getElementById("opinions_title");
 const description = document.getElementById("statement_description");
 
-
 const subjectInit = function (subject) {
     subject.myAnswer = '';
     subject.important = false;
@@ -19,7 +18,6 @@ const partiesInit = function (oneParty) {
 };
 parties.forEach(partiesInit);
 
-
 let topParties = [];
 const bigParty = 10;
 
@@ -27,8 +25,8 @@ const bigParty = 10;
  * De Pagina met vragen word geladen
  */
 function startFunction() {
-    document.getElementById("container").style.display = "none";
-    document.getElementById("container-2").style.display = "none";
+    document.getElementById("home").style.display = "none";
+    document.getElementById("home").style.display = "none";
     document.getElementById("statements").style.display = "block";
     document.getElementById("partyPage").style.display = "none";
     document.getElementById("resultSection").style.display = "none";
@@ -39,25 +37,30 @@ function startFunction() {
     description.innerHTML = subjects[0].statement;
 }
 
-const startButton = document.getElementById('button');
+const startButton = document.getElementById('startButton');
 startButton.onclick = startFunction;
+
+for (const answerButton of document.getElementsByClassName('answerSection')) {
+    answerButton.onclick = nextQuestion;
+}
 
 
 /**
- * @param answer De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
+ * @param mouseEvent De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
  */
-function NextQuestion(answer) {
+function nextQuestion(mouseEvent) {
     //Het antwoord word toegevoegd aan 'answer'
-    subjects[statementOrder].myAnswer = answer;
+    removeColor(subjects[statementOrder].myAnswer);
+    subjects[statementOrder].myAnswer = mouseEvent.target.id;
     subjects[statementOrder].important = document.getElementById('important').checked;
     //Volgende vraag functie word uitgevoerd
-    nextStatement();
+    nextStatement(mouseEvent);
 }
 
 /**
  * De volgende stelling word geladen.
  */
-function nextStatement() {
+function nextStatement(mouseEvent) {
     //Als statmentorder kleiner is dan de lengte van subjects doet die -1 en telt die vanaf dan weer verder.
     // Zonder -1 kom je op 1 getal te hoog uit en heb je dus uiteindelijk een lege vraag.
     if (statementOrder < subjects.length - 1) {
@@ -66,6 +69,7 @@ function nextStatement() {
         //Nieuwe stelling word geladen
         title.innerHTML = subjects[statementOrder].title;
         description.innerHTML = subjects[statementOrder].statement;
+        const index = Math.max(0, statementOrder - 1);
         showAnswer(subjects[statementOrder].myAnswer);
         //Bij de laatste vraag telt die alles bij mekaar op
     } else (calculatePoints());
@@ -77,6 +81,7 @@ function nextStatement() {
 function previousQuestion() {
     //Hij gaat door tot de laatste (eerste) vraag en als die bij 0 is gaat die terug naar de homepagina
     if (statementOrder !== 0) {
+        removeColor(subjects[statementOrder].myAnswer);
         statementOrder--;
         //Nieuwe stelling word geladen
         title.innerHTML = subjects[statementOrder].title;
@@ -84,8 +89,14 @@ function previousQuestion() {
         showAnswer(subjects[statementOrder].myAnswer);
     } else {
         document.getElementById("statements").style.display = "none";
-        document.getElementById("container").style.display = "block";
-        document.getElementById("container-2").style.display = "block";
+        document.getElementById("home").style.display = "block";
+        document.getElementById("home").style.display = "block";
+    }
+}
+
+function removeColor(previousAnswer) {
+    if (previousAnswer) {
+        document.getElementById(previousAnswer).classList.remove('selectedButton');
     }
 }
 
@@ -94,18 +105,9 @@ function previousQuestion() {
  * @param answer De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
  */
 function showAnswer(answer) {
-    document.getElementById('important').checked = false;
-    for (var f = 0; f < document.getElementsByClassName('answerSection').length; f++) {
-        document.getElementsByClassName("answerSection")[f].style.background = 'black';
-        document.getElementsByClassName("answerSection")[f].style.font = 'white';
-    }
-    if (subjects[statementOrder].important === true) {
-        document.getElementById('important').checked = true;
-    }
-    if (answer === '') {
-
-    } else {
-        document.getElementById(answer).style.background = '#01B4DC';
+    document.getElementById('important').checked = subjects[statementOrder].important;
+    if (answer) {
+        document.getElementById(answer).classList.add('selectedButton');
     }
 }
 
@@ -114,12 +116,12 @@ function showAnswer(answer) {
  */
 function calculatePoints() {
     //Hier loop je door alle subjects heen
-    for (var i = 0; i < subjects.length; i++) {
+    for (let i = 0; i < subjects.length; i++) {
         //Hier loop je door alle subject partijen heen
-        for (var b = 0; b < subjects[i].parties.length; b++) {
+        for (let b = 0; b < subjects[i].parties.length; b++) {
             //Je vergelijkt je antwoord met de standpunten van de partijen
             if (subjects[i].myAnswer === subjects[i].parties[b].position) {
-                var findParty = parties.find(oneParty => oneParty.name === subjects[i].parties[b].name);
+                let findParty = parties.find(oneParty => oneParty.name === subjects[i].parties[b].name);
 
                 //Hier zeg je dat als important wordt aangeklikt hij 2 punten moet geven en als dat niet gebeurd dan is het maar 1 punt
                 if (subjects[i].important === true) {
@@ -136,8 +138,9 @@ function calculatePoints() {
 
 function displayPartyPage() {
     //Nieuwe pagina word geladen
+    document.getElementById("home").style.display = "none";
+    document.getElementById("home").style.display = "none";
     document.getElementById("statements").style.display = "none";
-    document.getElementById("statement-cont").style.display = "none";
     document.getElementById("partyPage").style.display = "block";
 
     //De partijen worden op volgorde gezet met de meeste punten
@@ -145,8 +148,8 @@ function displayPartyPage() {
     console.log(parties);
 
     //Hier worden de partijen getoond
-    for (var c = 0; c < parties.length; c++) {
-        var c = document.createElement("c");
+    for (let c = 0; c < parties.length; c++) {
+        let c = document.createElement("c");
 
         document.getElementById('partyOrder').appendChild(c);
     }
@@ -188,7 +191,7 @@ function getBiggerParties() {
  * @param partyID de value van de knop
  */
 function checkSelectParty(partyID) {
-    for (var f = 0; f < document.getElementsByClassName('filterParty').length; f++) {
+    for (let f = 0; f < document.getElementsByClassName('filterParty').length; f++) {
         document.getElementsByClassName('filterParty')[f].style.background = 'white';
     }
     document.getElementById(partyID).style.background = '#01B4DC';
