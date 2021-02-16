@@ -291,6 +291,7 @@
     <div id="statement-cont">
         <div id="application_progress">
         </div>
+        <!--Deze div is voor de terug button-->
         <div class="application_navigation">
             <button onclick="previousQuestion()" value="Go back to previous question" class="btn_back">
                 <i class="fas fa-arrow-left"></i>
@@ -307,7 +308,7 @@
             </div>
             <!-- Hier maak ik de knoppen aan waar je op moet klikken en geef ik een onclick functie eraan mee -->
             <div id="answer-buttons" class="w3-left ">
-                <button class="w3-button w3-round answerSection" id="pro">Eens
+                <button class="w3-button w3-round answerSection " id="pro">Eens
                 </button>
                 <button class="w3-button w3-round answerSection" id="none">Geen van
                     beide
@@ -325,6 +326,7 @@
 <!-- Hier maak ik een sectie aan en in die sectie word gevraagd welke partijen je mee wilt nemen   -->
 <section id="partyPage" class="partyPage">
     <div class="partyContext">
+
         <h3 class="title">Welke partijen wilt u meenemen in het resultaat?</h3>
         <p class="tekst">U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn.
             Daarbij nemen we ook de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen
@@ -349,8 +351,9 @@
             </div>
         </div>
 
-    <br><br>
-    <button class="resultButton w3-button w3-round w3-border" onclick="showResultPage()">Naar resultaat gaan</button>
+        <br><br>
+        <button class="resultButton w3-button w3-round w3-border" onclick="showResultPage()">Naar resultaat gaan
+        </button>
     </div>
 </section>
 
