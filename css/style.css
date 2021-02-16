@@ -295,7 +295,7 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
 }
 
 #pro:hover {
-    background-color: #01b4dc !important;
+    background-color: #1b913d; !important;
 }
 
 #none:hover {
@@ -326,8 +326,7 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
     background-color: white;
     height: 80vh;
     width: 60%;
-    margin-left: 23vw;
-    margin-top: 5vw;
+    margin: 5vh auto;
     text-align: center;
 }
 
