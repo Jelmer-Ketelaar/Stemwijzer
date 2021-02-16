@@ -272,10 +272,9 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
     margin-left: 0.5vw;
 }
 
-
-/* mening buttons */
+/* answer buttons */
 #pro {
-    background-color: green;
+    background-color: #20a84b;
     color: white;
     border-radius: 10px;
     outline: none;
@@ -308,10 +307,11 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
 }
 
 .selectedButton {
-    background-color: #01b4dc !important;
+    border: solid black !important;
 }
 
 #partyPage {
+    display: none;
     border-radius: 10px;
     width: 60%;
     background-color: white;
@@ -321,6 +321,7 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
 }
 
 #resultSection {
+    display: none;
     border-radius: 10px;
     background-color: white;
     height: 80vh;
