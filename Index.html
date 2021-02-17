@@ -18,7 +18,7 @@
 
 <body id="body">
 
-<div id="home">
+<section id="home">
     <div class="w3-container">
         <div class="container-inside">
 
@@ -27,41 +27,41 @@
             </div>
 
             <!-- Hier maak ik een div voor de titel-->
-            <div class="intro">
+            <div class="homeContext">
                 <p>StemWijzer Tweede Kamer 2017</p>
                 <!-- Deze div heb ik toegevoegd voor het bovenste stuk (de button en de grote titel) -->
-                <div class="comment">
-                    <h2 class="comment_title">Test uw politieke voorkeur aan de hand van 30 stellingen</h2>
+                <div class="description">
+                    <h2 class="tilte">Test uw politieke voorkeur aan de hand van 30 stellingen</h2>
                     <button class="w3-button w3-black w3-round w3-right" id="startButton"> Start
                     </button>
                 </div>
             </div>
 
             <!-- Hier maak ik een div aan voor een icon -->
-            <div class="intro-2">
+            <div class="visualIconDiv">
                 <img class="icon-visual" src="img/icon-visual.svg" alt="icon-visual">
             </div>
             <!-- Hier maak ik een div aan voor de intro text -->
-            <div class="intro-text">
+            <div class="visualDescription">
                 <p>
                     Bekijk de toegankelijke versie voor mensen met een visuele beperking
                 </p>
             </div>
 
             <!-- Hier maak ik een div aan voor de privacy icon -->
-            <div class="intro-3">
+            <div class="privacyIcon">
                 <img class="privacy-icon" src="img/privacy.svg" alt="privacy-icon">
             </div>
 
             <!-- Hier maak ik een div aan voor de cookies text -->
-            <div class="intro-2nd-text">
+            <div class="cookiesDescription">
                 <p>
                     De StemWijzer maakt geen gebruik van cookies. Klik hier voor de volledige privacy statement
                 </p>
             </div>
 
             <!-- Hier maak een div aan en in die div zit de beschrijving van de stemmentracker -->
-            <div class="intro-4">
+            <div class="contextDiv">
                 <div class="adv__container">
                     <h2 class="adv__title">
                         <a href="https://www.stemmentracker.nl/" target="new">
@@ -76,24 +76,23 @@
         </div>
 
         <!-- Hier maak ik een div aan voor de footer. Voor de logo's -->
-        <div class="footer">
+        <section class="footer">
             <!-- Hier maak ik een extra div voor de linker kant, zodat 1 logo links staat -->
-            <div class="footer-left">
-                <img class="stemwijzer-logo" src="img/logo-stemwijzer-white.png">
+            <div class="footerLeft">
+                <img alt="stemwijzerLogo" id="stemwijzerLogo" class="w3-bottom" src="img/logo-stemwijzer-white.png">
             </div>
             <!-- Hier maak ik een extra div voor de rechter kant, zodat 1 logo rechts staat -->
-            <div class="footer-right">
-                <img alt="logo-prodemos" class="prodemos-logo" src="img/logo-prodemos.svg">
-                <img alt="logo-1v" class="logo-1v" src="img/logo-1v-small.svg">
+            <div class="footerRight">
+                <img alt="logoProdemos" class="w3-bottom" id="prodemosLogo" src="img/logo-prodemos.svg">
+                <img alt="logo-1v" id="logo-1v" src="img/logo-1v-small.svg">
             </div>
-        </div>
+        </section>
     </div>
 
     <!-- Hier maak ik een div aan voor alle partijen die op mijn home screen staan -->
-    <div class="parties-container">
-
-        <img alt="1vandaag" src="img/1vandaag.svg">
+    <section class="partiesContainer">
         <div class="parties w3-mobile">
+            <img alt="1vandaag" src="img/1vandaag.svg" class="eenVandaag">
             <h5 class="text">Deze partijen doen mee:</h5>
 
             <div class="party w3-mobile w3-mobile">
@@ -283,14 +282,15 @@
                 </a>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</section>
 
 <!-- Hier maak ik een div aan met een class en id statement. Dit is voor het stuk waar de vragen tevoorschijn komen -->
 <section id="statements" class="statements">
     <div id="statement-cont">
         <div id="application_progress">
         </div>
+        <!--Deze div is voor de terug button-->
         <div class="application_navigation">
             <button onclick="previousQuestion()" value="Go back to previous question" class="btn_back">
                 <i class="fas fa-arrow-left"></i>
@@ -307,7 +307,7 @@
             </div>
             <!-- Hier maak ik de knoppen aan waar je op moet klikken en geef ik een onclick functie eraan mee -->
             <div id="answer-buttons" class="w3-left ">
-                <button class="w3-button w3-round answerSection" id="pro">Eens
+                <button class="w3-button w3-round answerSection " id="pro">Eens
                 </button>
                 <button class="w3-button w3-round answerSection" id="none">Geen van
                     beide
@@ -325,6 +325,7 @@
 <!-- Hier maak ik een sectie aan en in die sectie word gevraagd welke partijen je mee wilt nemen   -->
 <section id="partyPage" class="partyPage">
     <div class="partyContext">
+
         <h3 class="title">Welke partijen wilt u meenemen in het resultaat?</h3>
         <p class="tekst">U kunt kiezen voor zittende partijen, die nu in de Tweede Kamer vertegenwoordigd zijn.
             Daarbij nemen we ook de partijen mee die in de peilingen op minimaal één zetel staan. U kunt alle partijen
@@ -349,8 +350,9 @@
             </div>
         </div>
 
-    <br><br>
-    <button class="resultButton w3-button w3-round w3-border" onclick="showResultPage()">Naar resultaat gaan</button>
+        <br><br>
+        <button class="resultButton w3-button w3-round w3-border" onclick="showResultPage()">Naar resultaat gaan
+        </button>
     </div>
 </section>
 
@@ -366,6 +368,9 @@
         </div>
         <div class="thirdPlace">
             <p id="3rd">3: </p>
+        </div>
+        <div class="fourthPlace">
+            <p id="4th">4: </p>
         </div>
     </div>
 </section>
