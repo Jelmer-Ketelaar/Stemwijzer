@@ -1,46 +1,47 @@
-document.getElementById("partyPage").style.display = "none";
-document.getElementById("resultSection").style.display = "none";
-
-
-//Hier maak ik 3 variabelen aan. De eerste is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
+//Hier maak ik een variabelen aan. Die is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 let statementOrder = 0;
+//Hier maak ik een var aan (is const omdat die niet veranderd), zodat ik niet telkens dom hoef te gebruiken
 const title = document.getElementById("opinions_title");
 const description = document.getElementById("statement_description");
+const answerSection =  document.getElementsByClassName('answerSection');
+const checkbox = document.getElementById('important');
+const home = document.getElementById("home");
+const statements = document.getElementById("statements");
 
+//Hier maak ik een var aan voor de subject en maak ik een functie en geef ik subject erin mee
 const subjectInit = function (subject) {
     subject.myAnswer = '';
     subject.important = false;
 };
 subjects.forEach(subjectInit);
-
+//Hier maak ik een var aan en maak ik een functie en geef ik oneParty eraan mee. De punten beginnen bij 0, omdat anders heeft die er 1 teveel
 const partiesInit = function (oneParty) {
     oneParty.points = 0;
 };
+//Hier loop ik de parties door de partiesInit heen
 parties.forEach(partiesInit);
+
 
 let topParties = [];
 const bigParty = 10;
 
-/**
- * De Pagina met vragen word geladen
- */
+// Als je op de knop (start) klikt, dan word de pagina met vragen geladen en word de home pagina verbergt
 function startFunction() {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("home").style.display = "none";
-    document.getElementById("statements").style.display = "block";
-    document.getElementById("partyPage").style.display = "none";
-    document.getElementById("resultSection").style.display = "none";
+    home.style.display = "none";
+    statements.style.display = "block";
 
-    //Zet de eerste vraag klaar
-
+    //Zet de eerste vraag klaar en begint bij 0 zodat hij de aller eerste vraag pakt. Hier pak ik de titel en de beschrijving
     title.innerHTML = subjects[0].title;
     description.innerHTML = subjects[0].statement;
 }
 
+//Hier maak ik een var aan en die heeft haalt als waarde de id (startButton) uit de html op
 const startButton = document.getElementById('startButton');
+//Hier geef ik de var die ik net het aangemaakt een onclick en geef ik de startfunctie eraan mee
 startButton.onclick = startFunction;
 
-for (const answerButton of document.getElementsByClassName('answerSection')) {
+//Hier loop ik door de answersection heen en geef ik elke button een onclick mee, zodat als je erop klikt je naar de volgende vraag gaat
+for (const answerButton of answerSection) {
     answerButton.onclick = nextQuestion;
 }
 
@@ -49,11 +50,11 @@ for (const answerButton of document.getElementsByClassName('answerSection')) {
  * @param mouseEvent De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
  */
 function nextQuestion(mouseEvent) {
-    //Het antwoord word toegevoegd aan 'answer'
+    //Als eerst roep ik hier de functie removeColor op en geef ik de subjects mee en daaruit neem ik de statementOrder mee en pak ik
     removeColor(subjects[statementOrder].myAnswer);
     subjects[statementOrder].myAnswer = mouseEvent.target.id;
-    subjects[statementOrder].important = document.getElementById('important').checked;
-    //Volgende vraag functie word uitgevoerd
+    subjects[statementOrder].important = checkbox.checked;
+    //Volgende vraag functie word uitgevoerd en word mousevent meegegeven
     nextStatement(mouseEvent);
 }
 
@@ -61,14 +62,15 @@ function nextQuestion(mouseEvent) {
  * De volgende stelling word geladen.
  */
 function nextStatement(mouseEvent) {
-    //Als statmentorder kleiner is dan de lengte van subjects doet die -1 en telt die vanaf dan weer verder.
+    //Als statefdmentorder kleiner is dan de lengte van subjects doet die -1 en telt die vanaf dan weer verder.
     // Zonder -1 kom je op 1 getal te hoog uit en heb je dus uiteindelijk een lege vraag.
     if (statementOrder < subjects.length - 1) {
-        document.getElementById('important').checked = false;
+        checkbox.checked = false;
         statementOrder++;
         //Nieuwe stelling word geladen
         title.innerHTML = subjects[statementOrder].title;
         description.innerHTML = subjects[statementOrder].statement;
+        //Hier zeg ik dat hij niet verder mag dan 0, zodat het niet -1 word. Want anders krijg je een error
         const index = Math.max(0, statementOrder - 1);
         showAnswer(subjects[statementOrder].myAnswer);
         //Bij de laatste vraag telt die alles bij mekaar op
@@ -81,19 +83,21 @@ function nextStatement(mouseEvent) {
 function previousQuestion() {
     //Hij gaat door tot de laatste (eerste) vraag en als die bij 0 is gaat die terug naar de homepagina
     if (statementOrder !== 0) {
+        //Hier roep ik de functie removeColor op en hierdoor word de kleur van het antwoord verwijderd
         removeColor(subjects[statementOrder].myAnswer);
         statementOrder--;
         //Nieuwe stelling word geladen
         title.innerHTML = subjects[statementOrder].title;
         description.innerHTML = subjects[statementOrder].statement;
+        //Hier roep ik showAnswer op en hierdoor laat die zien welk antwoord je hebt gegeven bij de vorige vraag
         showAnswer(subjects[statementOrder].myAnswer);
+    //Als je weer terug bent bij de eerste vraag (0) dan gaat die weer terug naar de home pagina
     } else {
         document.getElementById("statements").style.display = "none";
         document.getElementById("home").style.display = "block";
-        document.getElementById("home").style.display = "block";
     }
 }
-
+//Hier maak ik een functie aan die dient voor het verwijderen van de kleur van de vorige vraag
 function removeColor(previousAnswer) {
     if (previousAnswer) {
         document.getElementById(previousAnswer).classList.remove('selectedButton');
@@ -105,7 +109,7 @@ function removeColor(previousAnswer) {
  * @param answer De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
  */
 function showAnswer(answer) {
-    document.getElementById('important').checked = subjects[statementOrder].important;
+    checkbox.checked = subjects[statementOrder].important;
     if (answer) {
         document.getElementById(answer).classList.add('selectedButton');
     }
@@ -116,6 +120,7 @@ function showAnswer(answer) {
  */
 function calculatePoints() {
     //Hier loop je door alle subjects heen
+    //Hier zeg je dat als i kleiner is dan de subjects lengte dan moet die er 1 bij i optellen
     for (let i = 0; i < subjects.length; i++) {
         //Hier loop je door alle subject partijen heen
         for (let b = 0; b < subjects[i].parties.length; b++) {
@@ -156,7 +161,7 @@ function displayPartyPage() {
 }
 
 /**
- * Deze functie word aangeroepen als de gebruiken de zittende partijen selecteerd
+ * Filtert alle zittende partijen, waardoor alleen die getoond worden
  */
 function getSeatedParties() {
     checkSelectParty('seated')
@@ -167,20 +172,20 @@ function getSeatedParties() {
 }
 
 /**
- * Deze functie word aangeroepen als de persoon alle partijen selecteerd
+ * Door deze functie worden alle partijen getoond
  */
 function getAllParties() {
     checkSelectParty('all')
     topParties = [];
     topParties = parties;
 }
-
 /**
- * Alleen de grote partijen worden getoond
+ * Filtert alle grote partijen, waardoor alleen die getoond worden
  */
 function getBiggerParties() {
     checkSelectParty('bigger')
     topParties = [];
+    subjects.forEach(subjectInit);
     topParties = parties.filter(party => {
         return party.size >= bigParty;
     })
@@ -194,7 +199,7 @@ function checkSelectParty(partyID) {
     for (let f = 0; f < document.getElementsByClassName('filterParty').length; f++) {
         document.getElementsByClassName('filterParty')[f].style.background = 'white';
     }
-    document.getElementById(partyID).style.background = '#01B4DC';
+
 }
 
 /**
@@ -211,4 +216,5 @@ function showResultPage() {
     document.getElementById('1st').innerHTML += topParties[0].name;
     document.getElementById('2nd').innerHTML += topParties[1].name;
     document.getElementById('3rd').innerHTML += topParties[2].name;
+    document.getElementById('4th').innerHTML += topParties[3].name;
 }
