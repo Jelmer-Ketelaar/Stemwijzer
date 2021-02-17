@@ -1,12 +1,22 @@
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+});
+
 //Hier maak ik een variabelen aan. Die is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 let statementOrder = 0;
 //Hier maak ik een var aan (is const omdat die niet veranderd), zodat ik niet telkens dom hoef te gebruiken
-const title = document.getElementById("opinions_title");
-const description = document.getElementById("statement_description");
-const answerSection =  document.getElementsByClassName('answerSection');
+const title = document.getElementById("opinionsTitle");
+const description = document.getElementById("statementDescription");
+const answerSection = document.getElementsByClassName('answerSection');
 const checkbox = document.getElementById('important');
 const home = document.getElementById("home");
 const statements = document.getElementById("statements");
+const partyPage = document.getElementById('partyPage');
+const partyOrder = document.getElementById('partyOrder');
+const resultSection = document.getElementById('resultSection');
+const firstPlace = document.getElementById('1st');
+const secondPlace = document.getElementById('2nd');
+const thirdlace = document.getElementById('3rd');
 
 //Hier maak ik een var aan voor de subject en maak ik een functie en geef ik subject erin mee
 const subjectInit = function (subject) {
@@ -91,12 +101,13 @@ function previousQuestion() {
         description.innerHTML = subjects[statementOrder].statement;
         //Hier roep ik showAnswer op en hierdoor laat die zien welk antwoord je hebt gegeven bij de vorige vraag
         showAnswer(subjects[statementOrder].myAnswer);
-    //Als je weer terug bent bij de eerste vraag (0) dan gaat die weer terug naar de home pagina
+        //Als je weer terug bent bij de eerste vraag (0) dan gaat die weer terug naar de home pagina
     } else {
-        document.getElementById("statements").style.display = "none";
-        document.getElementById("home").style.display = "block";
+        statements.style.display = "none";
+        home.style.display = "block";
     }
 }
+
 //Hier maak ik een functie aan die dient voor het verwijderen van de kleur van de vorige vraag
 function removeColor(previousAnswer) {
     if (previousAnswer) {
@@ -122,8 +133,10 @@ function calculatePoints() {
     //Hier loop je door alle subjects heen
     //Hier zeg je dat als i kleiner is dan de subjects lengte dan moet die er 1 bij i optellen
     for (let i = 0; i < subjects.length; i++) {
+
         //Hier loop je door alle subject partijen heen
         for (let b = 0; b < subjects[i].parties.length; b++) {
+
             //Je vergelijkt je antwoord met de standpunten van de partijen
             if (subjects[i].myAnswer === subjects[i].parties[b].position) {
                 let findParty = parties.find(oneParty => oneParty.name === subjects[i].parties[b].name);
@@ -143,10 +156,10 @@ function calculatePoints() {
 
 function displayPartyPage() {
     //Nieuwe pagina word geladen
-    document.getElementById("home").style.display = "none";
-    document.getElementById("home").style.display = "none";
-    document.getElementById("statements").style.display = "none";
-    document.getElementById("partyPage").style.display = "block";
+    home.style.display = "none";
+    home.style.display = "none";
+    statements.style.display = "none";
+    partyPage.style.display = "block";
 
     //De partijen worden op volgorde gezet met de meeste punten
     parties.sort((a, b) => b.points - a.points);
@@ -156,7 +169,7 @@ function displayPartyPage() {
     for (let c = 0; c < parties.length; c++) {
         let c = document.createElement("c");
 
-        document.getElementById('partyOrder').appendChild(c);
+        partyOrder.appendChild(c);
     }
 }
 
@@ -179,17 +192,6 @@ function getAllParties() {
     topParties = [];
     topParties = parties;
 }
-/**
- * Filtert alle grote partijen, waardoor alleen die getoond worden
- */
-function getBiggerParties() {
-    checkSelectParty('bigger')
-    topParties = [];
-    subjects.forEach(subjectInit);
-    topParties = parties.filter(party => {
-        return party.size >= bigParty;
-    })
-}
 
 /**
  * De kleur van de knop word veranderd al klik je op een van de knoppen
@@ -205,16 +207,28 @@ function checkSelectParty(partyID) {
 /**
  * De Resultaat pagina word geladen
  */
+
 function showResultPage() {
     if (topParties.length === 0) {
         return alert("Klik op een van de onderstaande knoppen s.v.p.");
     }
-    document.getElementById("partyPage").style.display = "none";
-    document.getElementById("resultSection").style.display = "block";
+    partyPage.style.display = "none";
+    resultSection.style.display = "block";
 
     //De top 3 partijen worden laten zien
-    document.getElementById('1st').innerHTML += topParties[0].name;
-    document.getElementById('2nd').innerHTML += topParties[1].name;
-    document.getElementById('3rd').innerHTML += topParties[2].name;
-    document.getElementById('4th').innerHTML += topParties[3].name;
+    firstPlace.innerHTML += topParties[0].name;
+    secondPlace.innerHTML += topParties[1].name;
+    thirdlace.innerHTML += topParties[2].name;
+}
+
+/**
+ * Filtert alle grote partijen, waardoor alleen die getoond worden
+ */
+function getBiggerParties() {
+    checkSelectParty('bigger')
+    topParties = [];
+    subjects.forEach(subjectInit);
+    topParties = parties.filter(party => {
+        return party.size >= bigParty;
+    })
 }
