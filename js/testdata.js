@@ -1,4 +1,4 @@
-var parties = [
+const parties = [
  {
     name: "PVV",
     secular: true,
@@ -31,7 +31,7 @@ var parties = [
 // D66: pro, contra, pro, contra
 // CU: pro, pro, pro, contra
 
-var subjects = [{
+const subjects = [{
     "title": "Bindend referendum",
     "statement": "Er moet een bindend referendum komen, waarmee burgers door het parlement aangenomen wetten kunnen tegenhouden.",
     "parties": [
