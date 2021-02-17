@@ -48,7 +48,7 @@ body > #home > .w3-container > .container-inside {
     width: 19.5vw;
 }
 
-body > #home > .parties-container {
+body > #home > .partiesContainer {
     background-color: #01b4dc;
     width: 69.5vw;
     height: 98vh;
@@ -57,11 +57,19 @@ body > #home > .parties-container {
     margin-top: 25px;
 }
 
+.eenVandaag {
+    position: relative;
+    bottom: 5vh;
+    margin-left: 8vw;
+    height: 3vh;
+}
+
 .parties {
+    position: relative;
     width: 20vw;
     float: right;
-    margin-right: -16vw;
-    margin-top: 20vh;
+    margin-left: 16vw !important;
+    top: 12vh;
 }
 
 .party__logo {
@@ -81,40 +89,42 @@ body > #home > .parties-container {
 }
 
 .no-parties {
+    position: relative;
     width: 20vw;
-    margin-top: 73vh;
-    margin-left: 50vw;
+    top: 67vh;
+    left: 50vw;
 }
 
 .text {
-    margin-bottom: -0.5vh;
     margin-left: 1vw;
     color: #ffffff;
     font-weight: 600;
 }
 
-body > #home > .parties-container > img {
+body > #home > .partiesContainer > img {
     padding: 5vh;
     width: 15.5vw;
     float: right;
 }
 
-body > #home > .w3-container > .container-inside > .intro {
+body > #home > .w3-container > .container-inside > .homeContext {
+    position: relative;
     font-size: 21px;
-    margin-top: -15px;
+    bottom: 1vh;
+    line-height: 3vh;
 }
 
-body > #home > .w3-container > .container-inside > .intro > p {
+body > #home > .w3-container > .container-inside > .homeContext > p {
     font-weight: 550;
 }
 
-body > #home > .w3-container > .container-inside > .intro > .comment > .comment_title {
+body > #home > .w3-container > .container-inside > .homeContext > .description > .title {
     color: #01b4dc;
     font-weight: 600;
     font-size: 33px;
 }
 
-body > #home > .w3-container > .container-inside > .intro > .comment > button {
+body > #home > .w3-container > .container-inside > .homeContext > .description > button {
     margin-top: 6vh;
     width: 14vw;
     height: 7.5vh;
@@ -133,59 +143,55 @@ body > #home > .w3-container > .container-inside > div > a {
     margin-left: 0.5vw;
 }
 
-body > #home > .w3-container > .container-inside > .intro-2 {
+body > #home > .w3-container > .container-inside > .visualIconDiv {
     width: 17vw;
     margin-top: 5vh;
 }
 
-body > #home > .w3-container > .container-inside > .intro-2 > .icon-visual {
+body > #home > .w3-container > .container-inside > .visualIconDiv > .icon-visual {
     height: 5vh;
 }
 
-body > #home > .w3-container > .container-inside > .intro-text {
-    margin-top: -7vh;
-    padding-bottom: 10px;
-    margin-left: 4vw;
+body > #home > .w3-container > .container-inside > .visualDescription {
+    position: relative;
+    bottom: 6.5vh;
     width: 15vw;
+    left: 5vw;
     font-size: 16px;
 }
 
-body > #home > .w3-container > .container-inside > .intro-2nd-text {
+body > #home > .w3-container > .container-inside > .cookiesDescription {
+    position: relative;
+    bottom: 7vh;
     width: 15vw;
-    margin-top: -8vh;
-    margin-left: 4vw;
+    left: 5vw;
     font-size: 16px;
 }
 
-body > #home > .w3-container > .container-inside > .intro-3 > img {
+body > #home > .w3-container > .container-inside > .privacyIcon > img {
     height: 5vh;
 }
 
-.stemwijzer-logo {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: -11vh;
+#stemwijzerLogo {
+    position: relative;
+    top: 22vh !important;
     padding-bottom: 35px;
     width: 8vw;
 }
 
-.prodemos-logo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: -16vw;
-    margin-bottom: -11vh;
+
+#prodemosLogo {
+    position: relative;
+    top: 16vh !important;
+    margin-left: 60vw;
     padding-bottom: 35px;
     width: 6vw;
 }
-
-.logo-1v {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: -18vw;
-    margin-bottom: -11.28vh;
-    padding-bottom: 35px;
+#logo-1v {
+    position: relative;
+    top: 9.8vh;
+    left: 67vw;
+    height: 3vh;
 }
 
 .intro-4 {
@@ -194,10 +200,6 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
     padding-top: 5vh;
 }
 
-.logo-stemmentracker {
-    margin-top: -5vh;
-    width: 23vw;
-}
 
 /* Style for the questions */
 
@@ -272,9 +274,8 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
     margin-left: 0.5vw;
 }
 
-/* mening buttons */
 #pro {
-    background-color: green;
+    background-color: #20a84b;
     color: white;
     border-radius: 10px;
     outline: none;
@@ -295,7 +296,7 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
 }
 
 #pro:hover {
-    background-color: #01b4dc !important;
+    background-color: #1b913d; !important;
 }
 
 #none:hover {
@@ -307,10 +308,11 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
 }
 
 .selectedButton {
-    background-color: #01b4dc !important;
+    border: solid black !important;
 }
 
 #partyPage {
+    display: none;
     border-radius: 10px;
     width: 60%;
     background-color: white;
@@ -320,12 +322,12 @@ body > #home > .w3-container > .container-inside > .intro-3 > img {
 }
 
 #resultSection {
+    display: none;
     border-radius: 10px;
     background-color: white;
     height: 80vh;
     width: 60%;
-    margin-left: 23vw;
-    margin-top: 5vw;
+    margin: 5vh auto;
     text-align: center;
 }
 
