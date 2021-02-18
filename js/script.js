@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 //Hier maak ik een let aan. Die is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 let statementOrder = 0;
-//Hier maak ik een const aan (is const omdat die niet veranderd), zodat ik niet telkens dom hoef te gebruiken
+//hier maak ik voor elke document element een const aan zodat ik die niet telkens hoef op te vragen bij elke methode
 const title = document.getElementById("opinionsTitle");
 const description = document.getElementById("statementDescription");
 const answerSection = document.getElementsByClassName('answerSection');
@@ -20,7 +20,7 @@ const thirdlace = document.getElementById('3rd');
 
 //Hier maak ik een const aan voor de subject en maak ik een functie en geef ik subject erin mee
 const subjectInit = function (subject) {
-    subject.myAnswer = '';
+    subject.myAnswer = ''; 
     subject.importantCheckbox = false;
 };
 
@@ -61,7 +61,7 @@ for (const answerButton of answerSection) {
 }
 
 /**
- * @param mouseEvent De keuze die je hebt gemaakt (pro(Eens), none(Geen van beide), contra(Oneens))
+ * @param mouseEvent is het event wat je krijgt als je clicked op je keuze button, het id hiervan is pas pro, none of contra
  */
 function nextQuestion(mouseEvent) {
     //Als eerst roep ik hier de functie removeBorder op en geef ik de subjects mee en daaruit neem ik de statementOrder mee en pak ik
@@ -69,7 +69,7 @@ function nextQuestion(mouseEvent) {
     subjects[statementOrder].myAnswer = mouseEvent.target.id;
     subjects[statementOrder].importantCheckbox = checkbox.checked;
     //Volgende vraag functie word uitgevoerd en word mousevent meegegeven
-    nextStatement(mouseEvent);
+    nextStatement();
 }
 
 /**
