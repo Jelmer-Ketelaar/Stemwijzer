@@ -201,7 +201,6 @@ body > #home > .w3-container > .container-inside > .privacyIcon > img {
     padding-top: 5vh;
 }
 
-
 /* Style for the questions */
 
 .back-button {
@@ -283,30 +282,32 @@ body > #home > .w3-container > .container-inside > .privacyIcon > img {
 }
 
 #none {
-    background-color: grey;
-    color: white;
+    background-color: #e7eaeb !important;
+    color: #000 !important;
     border-radius: 10px;
     outline: none;
 }
 
 #contra {
-    background-color: red;
+    background-color: #eb2045;
     color: white;
     border-radius: 10px;
     outline: none;
 }
 
 #pro:hover {
-    background-color: #1b913d;
-!important;
+    background-color: #1b913d !important;
+    color: white !important;
 }
 
 #none:hover {
-    background-color: #01b4dc !important;
+    background-color: #c6c6ca !important;
+    color: #000 !important;
 }
 
 #contra:hover {
-    background-color: #01b4dc !important;
+    background-color: #d21b3b !important;
+    color: white !important;
 }
 
 .selectedButton {
@@ -331,6 +332,26 @@ body > #home > .w3-container > .container-inside > .privacyIcon > img {
     width: 60%;
     margin: 5vh auto;
     text-align: center;
+}
+
+.resultTitle {
+    font-size: 30px;
+}
+
+.placeContainer {
+    position: relative;
+    top: 20vh;
+}
+
+.resultButton {
+    width: 20vw;
+    margin: 0 auto;
+    font-size: 17px;
+    background-color: #4caf50 !important;
+}
+
+.resultButton:hover {
+    background-color: #3fac42 !important;
 }
 
 .tekst {
@@ -363,17 +384,6 @@ body > #home > .w3-container > .container-inside > .privacyIcon > img {
 
 #opinionsTitle {
     margin-left: 6vw;
-}
-
-.resultButton {
-    width: 20vw;
-    margin: 0 auto;
-    font-size: 17px;
-    background-color: #4caf50 !important;
-}
-
-.resultButton:hover {
-    background-color: #3fac42 !important;
 }
 
 .partyCheckbox {
