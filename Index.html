@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="nl" xmlns="http://www.w3.org/1999/html">
-
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/w3.css" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
-
 
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
@@ -21,7 +19,6 @@
 <section id="home">
     <div class="w3-container">
         <div class="container-inside">
-
             <div class="logo-stemwijzer">
                 <img alt="logo" class="logo_img" src="img/logo-stemwijzer.svg">
             </div>
@@ -288,7 +285,9 @@
 <!-- Hier maak ik een div aan met een class en id statement. Dit is voor het stuk waar de vragen tevoorschijn komen -->
 <section id="statements" class="statements">
     <div id="statement-cont">
-        <div id="application_progress">
+        <p class="progressText"></p>
+        <div id="progressBar">
+            <div class="progressBarFull"></div>
         </div>
         <!--Deze div is voor de terug button-->
         <div class="application_navigation">
@@ -302,15 +301,14 @@
                 <p id="statementDescription"></p>
             </div>
             <div class="w3-container checkboxContainer">
-                <label class="partyCheckbox" for="important">Laat dit onderwerp zwaarder meetellen</label>
-                <input class="checkboxInput" id="important" type="checkbox">
+                <label class="partyCheckbox" for="importantCheckbox">Laat dit onderwerp zwaarder meetellen</label>
+                <input class="checkboxInput" id="importantCheckbox" type="checkbox">
             </div>
             <!-- Hier maak ik de knoppen aan waar je op moet klikken en geef ik een onclick functie eraan mee -->
             <div id="answer-buttons" class="w3-left ">
-                <button class="w3-button w3-round answerSection " id="pro">Eens
+                <button class="w3-button w3-round answerSection" id="pro">Eens
                 </button>
-                <button class="w3-button w3-round answerSection" id="none">Geen van
-                    beide
+                <button class="w3-button w3-round answerSection" id="none">Geen van beide
                 </button>
                 <button class="w3-button w3-round answerSection" id="contra">Oneens
                 </button>
@@ -358,8 +356,8 @@
 
 <!-- Hier word een container gemaakt voor de resultaten van 1 naar 3  -->
 <section id="resultSection">
-    <h3 class="resultTitle">Resultaat</h3>
     <div class="placeContainer">
+        <h3 class="resultTitle">Resultaat</h3>
         <div class="firstPlace">
             <p id="1st">1: </p>
         </div>
