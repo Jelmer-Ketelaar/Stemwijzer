@@ -1,10 +1,12 @@
+//wordt geactiveerd wanneer het oorspronkelijke HTML-document volledig is geladen, zonder te wachten tot stylesheets, afbeeldingen en subframes zijn geladen.
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
-});
 
+});
 //Hier maak ik een let aan. Die is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 let statementOrder = 0;
 //hier maak ik voor elke document element een const aan zodat ik die niet telkens hoef op te vragen bij elke methode
+const startButton = document.getElementById('startButton');
 const title = document.getElementById("opinionsTitle");
 const description = document.getElementById("statementDescription");
 const answerSection = document.getElementsByClassName('answerSection');
@@ -16,11 +18,17 @@ const partyOrder = document.getElementById('partyOrder');
 const resultSection = document.getElementById('resultSection');
 const firstPlace = document.getElementById('1st');
 const secondPlace = document.getElementById('2nd');
-const thirdlace = document.getElementById('3rd');
+const thirdPlace = document.getElementById('3rd');
+const seatedParties = document.getElementById('seated')
+const allParties = document.getElementById('all')
+const biggerParties = document.getElementById('bigger')
+const resultButton = document.getElementById('resultPage')
+
+
 
 //Hier maak ik een const aan voor de subject en maak ik een functie en geef ik subject erin mee
 const subjectInit = function (subject) {
-    subject.myAnswer = ''; 
+    subject.myAnswer = '';
     subject.importantCheckbox = false;
 };
 
@@ -50,10 +58,8 @@ function startFunction() {
     description.innerHTML = subjects[0].statement;
 }
 
-//Hier maak ik een const aan en die heeft haalt als waarde de id (startButton) uit de html op
-const startButton = document.getElementById('startButton');
-//Hier geef ik de const die ik net het aangemaakt een onclick en geef ik de startfunctie eraan mee
-startButton.onclick = startFunction;
+//Hier geef aan dat de startbutton een onclick moet toevoegen aan de startfunctie
+startButton.addEventListener("click", startFunction)
 
 //Hier loop ik door de answersection heen en geef ik elke button een onclick mee, zodat als je erop klikt je naar de volgende vraag gaat
 for (const answerButton of answerSection) {
@@ -176,6 +182,9 @@ function displayPartyPage() {
     }
 }
 
+//Hier geef aan dat de startbutton een onclick moet toevoegen aan de startfunctie
+resultButton.addEventListener("click", showResultPage)
+
 /**
  * Filtert alle zittende partijen, waardoor alleen die getoond worden
  */
@@ -183,13 +192,15 @@ function getSeatedParties() {
     checkSelectParty('seated')
     topParties = [];
     topParties = function () {
-
     };
 
     topParties = parties.filter(party => {
         return party.secular === true;
     })
 }
+
+//Hier geef aan dat de startbutton een onclick moet toevoegen aan de startfunctie
+seatedParties.addEventListener("click", getSeatedParties)
 
 /**
  * Door deze functie worden alle partijen getoond
@@ -199,6 +210,9 @@ function getAllParties() {
     topParties = [];
     topParties = parties;
 }
+
+//Hier geef aan dat de allParties een onclick moet toevoegen aan de getAllParties functie
+allParties.addEventListener("click", getAllParties)
 
 /**
  * De kleur van de knop word veranderd al klik je op een van de knoppen
@@ -211,23 +225,6 @@ function checkSelectParty(partyID) {
 }
 
 /**
- * De Resultaat pagina word geladen
- */
-
-function showResultPage() {
-    if (topParties.length === 0) {
-        return alert("Klik op een van de onderstaande knoppen s.v.p.");
-    }
-    partyPage.style.display = "none";
-    resultSection.style.display = "block";
-
-    //De top 3 partijen worden laten zien en voegt de waarde toe aan de array
-    firstPlace.innerHTML += topParties[0].name;
-    secondPlace.innerHTML += topParties[1].name;
-    thirdlace.innerHTML += topParties[2].name;
-}
-
-/**
  * Filtert alle grote partijen, waardoor alleen die getoond worden
  */
 function getBiggerParties() {
@@ -237,4 +234,24 @@ function getBiggerParties() {
     topParties = parties.filter(party => {
         return party.size >= bigParty;
     })
+}
+
+//Hier geef aan dat de startbutton een onclick moet toevoegen aan de startfunctie
+biggerParties.addEventListener("click", getBiggerParties)
+
+/**
+ * De Resultaat pagina word geladen
+ */
+function showResultPage() {
+    //Hier word een alert gegeven als geen van de knoppen is ingedrukt
+    if (topParties.length === 0) {
+        return alert("Klik op een van de onderstaande knoppen s.v.p.");
+    }
+    partyPage.style.display = "none";
+    resultSection.style.display = "block";
+
+    //De top 3 partijen worden laten zien en voegt de waarde toe aan de array
+    firstPlace.innerHTML += topParties[0].name;
+    secondPlace.innerHTML += topParties[1].name;
+    thirdPlace.innerHTML += topParties[2].name;
 }
