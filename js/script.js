@@ -1,8 +1,3 @@
-//wordt geactiveerd wanneer het oorspronkelijke HTML-document volledig is geladen, zonder te wachten tot stylesheets, afbeeldingen en subframes zijn geladen.
-window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
-
-});
 //Hier maak ik een let aan. Die is 0, omdat de statements (de verklaringen) vanaf de eerste vraag moeten beginnen.
 let statementOrder = 0;
 //hier maak ik voor elke document element een const aan zodat ik die niet telkens hoef op te vragen bij elke methode
@@ -19,11 +14,10 @@ const resultSection = document.getElementById('resultSection');
 const firstPlace = document.getElementById('1st');
 const secondPlace = document.getElementById('2nd');
 const thirdPlace = document.getElementById('3rd');
-const seatedParties = document.getElementById('seated')
-const allParties = document.getElementById('all')
-const biggerParties = document.getElementById('bigger')
-const resultButton = document.getElementById('resultPage')
-
+const seatedParties = document.getElementById('seated');
+const allParties = document.getElementById('all');
+const biggerParties = document.getElementById('bigger');
+const resultButton = document.getElementById('resultPage');
 
 
 //Hier maak ik een const aan voor de subject en maak ik een functie en geef ik subject erin mee
@@ -51,7 +45,6 @@ const bigParty = 10;
 function startFunction() {
     home.style.display = "none";
     statements.style.display = "block";
-
     //Zet de eerste vraag klaar en begint bij 0 zodat hij de aller eerste vraag pakt.
     // Hier pak ik de titel en de beschrijving
     title.innerHTML = subjects[0].title;
@@ -143,12 +136,12 @@ function calculatePoints() {
     //Hier loopt de code door de subjects array
     for (let i = 0; i < subjects.length; i++) {
 
-        //Hier loopt die door alle partijen van de subject heen
+        //Hier loopt die door alle partijen van de subject heen tot die het einde heeft bereikt
         for (let b = 0; b < subjects[i].parties.length; b++) {
 
             // Als het antwoord van subjects gelijk is aan de positie van alle partijen, dan zoekt die naar de naam van de partij
             if (subjects[i].myAnswer === subjects[i].parties[b].position) {
-                //Hij zoekt hier naar de partij die overeenkomt met de partij naam door te zoeken naar alle partijen in de subjects
+                //Hij zoekt hier naar de partij die overeenkomt met de partij naam, door te zoeken naar alle partijen in de subjects
                 let findParty = parties.find(oneParty => oneParty.name === subjects[i].parties[b].name);
 
                 //Als important wordt aangeklikt hij 2 punten moet geven en als dat niet gebeurd dan is het maar 1 punt
@@ -194,9 +187,9 @@ function getSeatedParties() {
     topParties = function () {
     };
 
-    topParties = parties.filter(party => {
+    topParties = parties.filter(function (party) {
         return party.secular === true;
-    })
+    });
 }
 
 //Hier geef aan dat de startbutton een onclick moet toevoegen aan de startfunctie
@@ -231,9 +224,12 @@ function getBiggerParties() {
     checkSelectParty('bigsger')
     topParties = [];
     subjects.forEach(subjectInit);
-    topParties = parties.filter(party => {
+    //Hij filter hier de grote partijen
+    topParties = parties.filter(function (party) {
         return party.size >= bigParty;
     })
+
+    console.log(topParties)
 }
 
 //Hier geef aan dat de startbutton een onclick moet toevoegen aan de startfunctie
