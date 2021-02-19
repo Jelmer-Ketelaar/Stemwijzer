@@ -20,7 +20,7 @@ const thirdlace = document.getElementById('3rd');
 
 //Hier maak ik een const aan voor de subject en maak ik een functie en geef ik subject erin mee
 const subjectInit = function (subject) {
-    subject.myAnswer = ''; 
+    subject.myAnswer = '';
     subject.importantCheckbox = false;
 };
 
@@ -84,8 +84,8 @@ function nextStatement() {
         //Nieuwe stelling word geladen
         title.innerHTML = subjects[statementOrder].title;
         description.innerHTML = subjects[statementOrder].statement;
-        //Hier zeg ik dat hij niet verder mag dan 0, zodat het niet -1 word. Want anders krijg je een error
-        const index = Math.max(0, statementOrder - 1);
+        //Hier zorgt die ervoor dat hij niet verder mag dan 0, zodat het niet -1 word. Want anders krijg je een error
+        Math.max(0, statementOrder - 1);
         showAnswer(subjects[statementOrder].myAnswer);
         //Bij de laatste vraag telt die alles bij mekaar op
     } else (calculatePoints());
@@ -142,7 +142,7 @@ function calculatePoints() {
 
             // Als het antwoord van subjects gelijk is aan de positie van alle partijen, dan zoekt die naar de naam van de partij
             if (subjects[i].myAnswer === subjects[i].parties[b].position) {
-                //Hij zoekt hier naar de partij die overeenkomt met de partij naam
+                //Hij zoekt hier naar de partij die overeenkomt met de partij naam door te zoeken naar alle partijen in de subjects
                 let findParty = parties.find(oneParty => oneParty.name === subjects[i].parties[b].name);
 
                 //Als important wordt aangeklikt hij 2 punten moet geven en als dat niet gebeurd dan is het maar 1 punt
